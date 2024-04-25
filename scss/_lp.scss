@@ -1,0 +1,16 @@
+// 資料庫
+@import './partials/mixin';
+@import './partials/variable';
+
+.lp {
+  .listBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    .pic {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+  }
+}
