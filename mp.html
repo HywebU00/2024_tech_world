@@ -118,11 +118,10 @@
       <!-- header end -->
       <main>
         <section class="bannerBox">
-          <video class="video" muted="" playsinline="" autobuffer="" preload="">
-            <source src="http://u00.hyweb.com.tw/GUI/chimiao/test.mp4" type="video/mp4" />
+          <video class="video" muted="" playsinline="" autobuffer="">
+            <source src="video.mp4" type="video/mp4" />
             <!-- <source src="test.mp4" type="video/mp4" /> -->
           </video>
-          test
         </section>
         <div class="mainBox">
           <div class="floatNav">
@@ -211,14 +210,14 @@
                 <li class="item wow fadeInLeft" data-wow-delay="0s">
                   <div class="video">
                     <video muted="" playsinline="" autobuffer="" preload="">
-                      <source src="http://u00.hyweb.com.tw/GUI/chimiao/test.mp4" type="video/mp4" />
+                      <source src="video.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </li>
                 <li class="item wow fadeInRight" data-wow-delay="0.2s">
                   <div class="video">
                     <video muted="" playsinline="" autobuffer="" preload="">
-                      <source src="http://u00.hyweb.com.tw/GUI/chimiao/test.mp4" type="video/mp4" />
+                      <source src="video.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </li>
@@ -370,8 +369,8 @@
       </footer>
     </div>
     <svg class="clipUse">
-      <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-        <feTurbulence id="ripples" type="turbulence" baseFrequency="0.01 .1" numOctaves="1" result="turbulence" seed="53" stitchTiles="noStitch" />
+      <filter id="turbulence" x="0" y="0">
+        <feTurbulence id="ripples" type="turbulence" baseFrequency="0.05" result="turbulence" stitchTiles="noStitch" />
         <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="B" />
         <animate
           xlink:href="#ripples"
@@ -388,7 +387,7 @@
     <div class="moreBtn">
       <div class="more">MORE</div>
     </div>
-    <div class="loading">Loading</div>
+    <div class="loading"><div class="text">LOADING</div></div>
     <script src="plugins/jquery-3.7.1.min.js"></script>
     <script src="plugins/WOW-master/dist/wow.min.js"></script>
     <script src="plugins/gsap.min.js"></script>

@@ -1,67 +1,5 @@
-// (function bannerUse() {
-//   const body = document.querySelector('body');
-//   const videoBox = document.querySelector('.bannerBox');
-//   const video = document.querySelector('.video');
-//   const loading = document.querySelector('.loading');
-
-//   const totalFrames = 1500;
-//   let lastScrollTime = 0;
-//   let lastVideoTime = 0;
-
-//   body.classList.add('onload');
-//   video.addEventListener('loadeddata', function () {
-//     body.classList.remove('onload');
-//     loading.classList.add('loaded');
-//   });
-//   video.load();
-//   window.addEventListener('scroll', function (e) {
-//     const checkCurrentTime = performance.now();
-//     if (checkCurrentTime - lastScrollTime < 50) {
-//       return;
-//     }
-//     lastScrollTime = checkCurrentTime;
-
-//     const scrollY = window.scrollY;
-
-//     const currentFrame = Math.floor((scrollY / (videoBox.clientHeight - window.innerHeight)) * totalFrames);
-//     const currentTimeInSeconds = (currentFrame / totalFrames) * video.duration;
-
-//     requestAnimationFrame(function () {
-//       if (Math.abs(currentTimeInSeconds - lastVideoTime) > 0.05) {
-//         video.currentTime = currentTimeInSeconds;
-//         lastVideoTime = currentTimeInSeconds;
-//       }
-//     });
-//   });
-
-//   const siteHeader = document.querySelector('.siteHeader');
-//   let lastScrollTop = 0;
-//   window.addEventListener('scroll', () => {
-//     const currentScrollTop = window.scrollY;
-
-//     if (currentScrollTop > lastScrollTop) {
-//       siteHeader.classList.add('headIn');
-//     } else {
-//       siteHeader.classList.remove('headIn');
-//       body.classList.remove('mobileOpen');
-//     }
-
-//     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // 確保在頂部時不會出現負值
-//   });
-
-//   // let shine = new Shine(document.querySelector('.floatNav .bg'));
-//   // window.addEventListener(
-//   //   'mousemove',
-//   //   function (event) {
-//   //     shine.light.position.x = event.clientX;
-//   //     shine.light.position.y = event.clientY;
-//   //     shine.draw();
-//   //   },
-//   //   false
-//   // );
-// });
-
 (function () {
+  'use strict';
   const body = document.querySelector('body');
   const siteHeader = document.querySelector('.siteHeader');
   const siteHeaderIn = document.querySelector('.innerPage .siteHeader');
@@ -171,17 +109,20 @@
   function hoverOn(elem) {
     const targetItem = document.querySelectorAll(elem);
 
-    targetItem.forEach((item) => {
-      item.addEventListener('mouseenter', () => {
-        moreBtn.classList.add('hoverOn');
-      });
+    if (targetItem.length > 0) {
+      targetItem.forEach((item) => {
+        item.addEventListener('mouseenter', () => {
+          moreBtn.classList.add('hoverOn');
+        });
 
-      item.addEventListener('mouseleave', () => {
-        moreBtn.classList.remove('hoverOn');
+        item.addEventListener('mouseleave', () => {
+          moreBtn.classList.remove('hoverOn');
+        });
       });
-    });
+    }
   }
   hoverOn('section a');
+  hoverOn('.innerPage .listBox a');
 
   //newsBox
   const newsBox = document.querySelector('.newsBox');
@@ -214,9 +155,9 @@
   if (mainBox) {
     window.addEventListener('scroll', () => {
       const mainBoxPosition = mainBox.getBoundingClientRect();
-      if (mainBoxPosition.top < floatNav.offsetHeight / 2 + 200) {
+      if (mainBoxPosition.top < floatNav.offsetHeight / 2 + 300) {
         floatNav.classList.add('active');
-        floatNav.style.top = `${floatNav.offsetHeight / 2 + 200}px`;
+        floatNav.style.top = `${floatNav.offsetHeight / 2 + 300}px`;
         floatNav.style.position = `fixed`;
       } else {
         floatNav.removeAttribute('style');
@@ -238,56 +179,111 @@
     if (menuBox.classList.contains('active')) {
       menuBox.classList.remove('active');
     } else {
-      setTimeout(() => {
-        menuBox.classList.add('active');
-      }, 1200);
+      menuBox.classList.add('active');
     }
   });
 
   // bannerUse
-  // const checkBox = document.querySelector('.checkBox');
   const videoBox = document.querySelector('.bannerBox');
   const video = document.querySelector('.video');
   const loading = document.querySelector('.loading');
+
+  if (loading) {
+    const loadingText = document.querySelector('.loading .text');
+    loadingText.innerHTML = loadingText.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime
+      .timeline({ loop: true })
+      .add({
+        targets: '.loading .letter',
+        translateX: [40, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 1200,
+        delay: (el, i) => 500 + 30 * i,
+      })
+      .add({
+        targets: '.loading .letter',
+        translateX: [0, -30],
+        opacity: [1, 0],
+        easing: 'easeInExpo',
+        duration: 1100,
+        delay: (el, i) => 100 + 30 * i,
+      });
+  }
+
   if (videoBox) {
     let totalHeight = videoBox.offsetHeight;
 
     let loaded = false;
     body.classList.add('onload');
-    video.addEventListener('loadeddata', function () {
+    video.addEventListener('canplaythrough', function () {
       setTimeout(() => {
         body.classList.remove('onload');
         loading.classList.add('loaded');
-      }, 2000);
+      }, 1000);
       loaded = true;
     });
-    video.load();
-
-    let check = 0;
-
-    window.addEventListener('scroll', () => {
-      // checkBox.innerHTML = window.scrollY;
-      if (!loaded) return;
-      startAnimation();
-    });
-    function startAnimation() {
-      requestAnimationFrame(animation);
-      function animation(t) {
-        let currentScrollTop = window.scrollY;
-        let lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // 確保在頂部時不會出現負值
-        let totalTime = video.duration;
-
-        if (check < lastScrollTop) {
-          check++;
-        } else {
-          check--;
-        }
-
-        video.currentTime = (totalTime * check) / (totalHeight - window.innerHeight);
-
-        requestAnimationFrame(animation);
+    let checkLoad = setInterval(function () {
+      console.log(video.readyState);
+      if (video.readyState >= 2) {
+        body.classList.remove('onload');
+        loading.classList.add('loaded');
+        loaded = true;
       }
-    }
+    }, 3000);
+
+    const totalFrames = totalHeight - window.innerHeight;
+    let lastScrollTime = 0;
+    let lastVideoTime = 0;
+
+    window.addEventListener('scroll', function () {
+      if (loaded) {
+        clearInterval(checkLoad);
+        const currentTime = performance.now();
+        if (currentTime - lastScrollTime < 50) {
+          return;
+        }
+        lastScrollTime = currentTime;
+
+        const scrollY = window.scrollY;
+
+        const currentTimeInSeconds = (scrollY / totalFrames) * video.duration;
+
+        requestAnimationFrame(function () {
+          if (Math.abs(currentTimeInSeconds - lastVideoTime) > 0.05) {
+            video.currentTime = currentTimeInSeconds;
+            lastVideoTime = currentTimeInSeconds;
+          }
+        });
+      }
+    });
+    // video.load();
+
+    // let check = 0;
+
+    // const checkBox = document.querySelector('.checkBox');
+    // window.addEventListener('scroll', () => {
+    //   checkBox.innerHTML = `${window.scrollY}/${video.currentTime}`;
+    //   requestAnimationFrame(startAnimation);
+    // });
+    // function startAnimation(t) {
+    //   let currentScrollTop = window.scrollY;
+    //   let lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // 確保在頂部時不會出現負值
+    //   let totalTime = video.duration;
+
+    //   if (check < lastScrollTop) {
+    //     check++;
+    //   } else {
+    //     check--;
+    //   }
+
+    //   video.stop;
+    //   video.currentTime = (totalTime * check) / (totalHeight - window.innerHeight);
+
+    //   requestAnimationFrame(animation);
+    // }
   }
 
   $('.innerPage .functionPanel .share .shareButton').on('click', function () {
@@ -357,6 +353,36 @@
         i.classList.add('active');
         content.classList.add(`${cookie}Size`);
       });
+    }
+  }
+
+  const footer = document.querySelector('footer');
+  window.addEventListener('resize', footerBg);
+  window.addEventListener('load', footerBg);
+  window.addEventListener('scroll', footerBg);
+  function footerBg() {
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const newsBoxFiltered = document.querySelector('.newsBox .filtered');
+    const target = document.querySelector('.activitiesBox');
+    const activitiesFiltered = document.querySelector('.activitiesBox .filtered');
+    const filteredPosition = target.getBoundingClientRect();
+    const targetBoxPosition = footer.getBoundingClientRect();
+
+    if (windowWidth < 768 && targetBoxPosition.top < windowHeight) {
+      footer.classList.add('fixBg');
+      activitiesFiltered.classList.add('hidden');
+    } else {
+      footer.classList.remove('fixBg');
+      activitiesFiltered.classList.remove('hidden');
+    }
+
+    console.log(filteredPosition);
+
+    if (filteredPosition.top < windowHeight) {
+      newsBoxFiltered.classList.add('hidden');
+    } else {
+      newsBoxFiltered.classList.remove('hidden');
     }
   }
 })();

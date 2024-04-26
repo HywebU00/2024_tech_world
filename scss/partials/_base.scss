@@ -376,10 +376,13 @@ button {
 
 
 .clipUse {
+  width: 100%;
+  height: 100%;
   position: fixed;
   opacity: 0;
   pointer-events: none;
   bottom: 0;
+  transform: scale(2);
 }
 
 .mainBox {
@@ -489,7 +492,11 @@ button {
 
   .mainBox {
     min-height: 100vh;
-    padding-top: 320px;
+    padding-top: 250px;
+
+    @include screen('tablet') {
+      padding-top: 100px;
+    }
 
     .pageTitle {
       font-size: 2.8em;
@@ -513,15 +520,16 @@ button {
   }
 
   .filtered {
-    position: absolute;
+    position: fixed;
     width: 100%;
     inset: 0;
     overflow: hidden;
+    transform: scale(1.1);
 
     &::before {
       content: '';
       position: absolute;
-      inset: -20px;
+      inset: 0px;
       background: url("../images/in_bg.jpg") no-repeat center center;
       background-size: cover;
       filter: url("#turbulence");
@@ -742,7 +750,7 @@ button {
   isolation: isolate;
   position: fixed;
   top: 0;
-  padding: 70px 0;
+  padding: 40px 0;
 
   @include screen('tablet') {
     padding: 40px 0;
@@ -1161,7 +1169,7 @@ button {
 
   &::before {
     border-radius: 40% 60% 39% 61% / 54% 39% 61% 46%;
-    background: url('../images/bg2.jpg') center repeat;
+    background: url('../images/activities_bg.jpg') center repeat;
     background-size: 50%;
     animation: rotate360 15s infinite linear;
     z-index: -1;
@@ -1215,7 +1223,7 @@ button {
     opacity: 0;
 
     @include screen('tablet') {
-      font-size: Rem(16);
+      font-size: Rem(14);
       margin: auto auto 0;
     }
   }
@@ -1281,6 +1289,10 @@ button {
           .nextMenuBox {
             &::before {
               background: #fff;
+
+              @include screenWidth('1200') {
+                background: #000;
+              }
             }
           }
         }
@@ -1300,7 +1312,7 @@ button {
             gap: 30px;
           }
 
-          @include screen('tablet') {
+          @include screenWidth('1200') {
             align-items: flex-start;
             padding: 10px 40px;
             gap: 0px;
@@ -1389,7 +1401,7 @@ button {
         @for $i from 1 to $max {
           &:nth-child(#{$i}) {
             .out {
-              animation-delay: #{$i * 0.2}s;
+              animation-delay: #{($i * 0.2) + 0.5}s;
             }
           }
         }
@@ -1701,20 +1713,19 @@ footer {
   background-attachment: fixed;
   position: relative;
 
-  @include screen('tablet') {
-    background-attachment: unset;
-  }
 
-  // &.fixBg {
-  //   &::before {
-  //     content: '';
-  //     inset: 0;
-  //     z-index: -1;
-  //     background: #000 url('../images/footer_bg.jpg') center bottom no-repeat;
-  //     display: block;
-  //     position: fixed;
-  //   }
-  // }
+  &.fixBg {
+    background: none;
+
+    &::before {
+      content: '';
+      inset: 0;
+      z-index: -1;
+      background: #000 url('../images/footer_bg.jpg') center bottom no-repeat;
+      display: block;
+      position: fixed;
+    }
+  }
 
   .topBox {
     display: flex;
