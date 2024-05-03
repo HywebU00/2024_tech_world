@@ -4,13 +4,52 @@
 
 .lp {
   .listBox {
+    --gap: 50px;
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 100px var(--gap);
+
+    .item {
+      width: calc((100% - var(--gap) * 2) / 3);
+
+      &:hover {
+        .pic {
+          &::after {
+            opacity: 0;
+          }
+        }
+      }
+    }
 
     .pic {
       border-radius: 20px;
       overflow: hidden;
+      margin-bottom: 30px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(#000, 0.5);
+        @include transition(all, 0.3);
+      }
+    }
+
+    .title {
+      font-size: Rem(22);
+      font-weight: 500;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      margin-bottom: 20px;
+      color: #0b0b0b;
+    }
+
+    .description {
+      color: #3b3939;
+      font-size: Rem(18);
     }
   }
 }

@@ -1,0 +1,192 @@
+// 資料庫
+@import './partials/mixin';
+@import './partials/variable';
+
+.innerPage .cp .mainBox {
+  .container {
+    max-width: 1350px;
+  }
+
+  .pageTitle {
+    text-align: left;
+  }
+
+  .mediaBox {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 10%;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .editor {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #3b3939;
+    line-height: 2.4;
+
+    @include screen('tablet') {
+      line-height: 1.8;
+    }
+
+    hr {
+      margin: 60px 0;
+      border-width: 3px 0 0;
+      border-color: #000;
+    }
+
+    h2 {
+      font-size: Rem(22);
+
+      @include screen('tablet') {
+        font-size: Rem(20);
+      }
+    }
+  }
+
+  .cpPicListBox {
+    overflow: hidden;
+
+
+    .picBox {
+      padding: 50px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .listBox {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .item {
+        flex-shrink: 0;
+        width: 280px;
+        border-radius: 15px;
+        overflow: hidden;
+        line-height: 0;
+        @include transition(all, 0.3);
+
+        &:hover {
+          width: 400px;
+          margin: -50px 0;
+        }
+      }
+    }
+
+    .controlBox {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      @include screen('tablet') {
+        padding-top: 30px;
+        margin-top: 30px;
+      }
+
+      @include screen('mobile') {
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      li {
+        margin: 0 10px;
+        line-height: 1.5;
+        text-align: center;
+
+        @include screen('tablet') {
+          margin: 0 2px;
+        }
+
+        &.active {
+          button {
+            color: $mainColor;
+            border-color: $mainColor;
+          }
+        }
+
+        &:last-of-type {
+          margin: 0;
+        }
+
+        button {
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: Rem(15);
+          width: 76px;
+          height: 74px;
+          font-weight: 500;
+          border: none;
+          @include transition(all, 0.3);
+
+          @include screen('tablet') {
+            width: 40px;
+            height: 40px;
+            font-size: Rem(16);
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            display: block;
+            background: #000;
+            border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            animation: arrowRadius 3s infinite linear;
+          }
+
+          &::after {
+            content: '';
+            width: 12px;
+            height: 8px;
+            display: block;
+            @include transition(all, 0.3);
+            background: url('../images/icon/icon_arrow_.svg') 0 0 no-repeat;
+            filter: invert(1);
+          }
+
+          &.prev {
+            margin-left: 20px;
+
+            &::before {
+              animation-direction: reverse;
+              animation-duration: 6s;
+            }
+          }
+
+          &.next {
+            &::after {
+              transform: scaleX(-1);
+            }
+          }
+
+          @keyframes arrowRadius {
+            0% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            }
+
+            25% {
+              border-radius: 56% 44% 31% 69% / 67% 52% 48% 33%;
+            }
+
+            50% {
+              border-radius: 56% 44% 45% 55% / 37% 72% 28% 63%;
+            }
+
+            100% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

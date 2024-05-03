@@ -226,7 +226,6 @@
       loaded = true;
     });
     let checkLoad = setInterval(function () {
-      console.log(video.readyState);
       if (video.readyState >= 2) {
         body.classList.remove('onload');
         loading.classList.add('loaded');
@@ -366,24 +365,35 @@
     const newsBoxFiltered = document.querySelector('.newsBox .filtered');
     const target = document.querySelector('.activitiesBox');
     const activitiesFiltered = document.querySelector('.activitiesBox .filtered');
-    const filteredPosition = target.getBoundingClientRect();
-    const targetBoxPosition = footer.getBoundingClientRect();
+    if (newsBoxFiltered) {
+      const filteredPosition = target.getBoundingClientRect();
+      const targetBoxPosition = footer.getBoundingClientRect();
 
-    if (windowWidth < 768 && targetBoxPosition.top < windowHeight) {
-      footer.classList.add('fixBg');
-      activitiesFiltered.classList.add('hidden');
-    } else {
-      footer.classList.remove('fixBg');
-      activitiesFiltered.classList.remove('hidden');
+      if (windowWidth < 768 && targetBoxPosition.top < windowHeight) {
+        footer.classList.add('fixBg');
+        activitiesFiltered.classList.add('hidden');
+      } else {
+        footer.classList.remove('fixBg');
+        activitiesFiltered.classList.remove('hidden');
+      }
+
+      if (filteredPosition.top < windowHeight) {
+        newsBoxFiltered.classList.add('hidden');
+      } else {
+        newsBoxFiltered.classList.remove('hidden');
+      }
     }
+  }
 
-    console.log(filteredPosition);
+  const trafficBox = document.querySelector('.trafficBox');
+  if (trafficBox) {
+    trafficBox.addEventListener('mouseenter', () => {
+      trafficBox.classList.remove('mouseLeave');
+    });
 
-    if (filteredPosition.top < windowHeight) {
-      newsBoxFiltered.classList.add('hidden');
-    } else {
-      newsBoxFiltered.classList.remove('hidden');
-    }
+    trafficBox.addEventListener('mouseleave', () => {
+      trafficBox.classList.add('mouseLeave');
+    });
   }
 })();
 
@@ -423,3 +433,13 @@ function sliderUse(elem) {
   }
 }
 sliderUse('.activitiesTitleBox span');
+
+(function () {
+  const filtered = document.querySelector('.filtered.top');
+  if (!filtered) return;
+  let scrollTop = window.scrollY;
+  window.addEventListener('scroll', () => {
+    scrollTop = window.scrollY;
+    filtered.style.top = `-${scrollTop}px`;
+  });
+})();

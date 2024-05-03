@@ -270,27 +270,31 @@
         display: block;
         padding: 40px 20px 20px;
         position: relative;
+        border-radius: 80px;
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 20px 0 rgba(#000, 0);
+        backdrop-filter: blur(0px);
+        @include transition(all, 0.3);
 
-        &::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          display: block;
-          border-radius: 80px;
-          background: rgba(255, 255, 255, 0.1);
-          box-shadow: 0 0 20px 0 rgba(#000, 0.2);
-          opacity: 0;
-          @include transition(all, 1);
-
-          @include screen('mobile') {
-            border-radius: 20px;
-          }
+        @include screen('mobile') {
+          border-radius: 20px;
         }
 
+        // &::before {
+        //   content: '';
+        //   position: absolute;
+        //   inset: 0;
+        //   display: block;
+        //   border-radius: 80px;
+        //   background: rgba(255, 255, 255, 0.1);
+        //   box-shadow: 0 0 20px 0 rgba(#000, 0.2);
+        //   opacity: 0;
+        // }
+
         &:hover {
-          &::before {
-            opacity: 1;
-          }
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(4px);
+          box-shadow: 0 0 20px 0 rgba(#000, 0.2);
         }
 
         .out {
@@ -356,9 +360,7 @@
 
   .videoBox {
     position: relative;
-    background-image:
-      linear-gradient(0deg in oklab,
-        rgb(100% 100% 100%) 0% 32%, rgb(100% 100% 100% / 0%) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
 
     // &:before {
     //   content: '';
@@ -385,6 +387,15 @@
       overflow: hidden;
       position: relative;
       line-height: 0;
+      cursor: pointer;
+
+      &:hover {
+        .arrow {
+          polygon {
+            animation: arrowMove 1s infinite linear;
+          }
+        }
+      }
 
       .video {
         &::before {
@@ -400,26 +411,124 @@
           @include transition(all, 0.3);
         }
 
-        &::after {
-          content: '';
+        .play {
+          pointer-events: none;
           position: absolute;
-          width: 30%;
-          max-width: 110px;
-          aspect-ratio: 1;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          display: block;
-          background: url('../images/icon/icon_play.svg') no-repeat center;
-          z-index: 3;
-          pointer-events: none;
-          @include transition(all, 0.3);
+          width: 30%;
+          max-width: 110px;
+          aspect-ratio: 1;
+          z-index: 4;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .arrow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-35%, -50%);
+          z-index: 4;
+          width: 15px;
+          height: 22px;
+        }
+
+        @keyframes arrowMove {
+          0% {
+            transform: translateX(0%);
+          }
+
+          50% {
+            transform: translateX(100%);
+          }
+
+          51% {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+
+          55% {
+            opacity: 1;
+            transform: translateX(-100%);
+          }
+
+          100% {
+            transform: translateX(0%);
+          }
+
+        }
+
+        .circle {
+          width: 100%;
+          height: 100%;
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            aspect-ratio: 1;
+            top: 0;
+            left: 0;
+            border: 2px solid rgba(#fff, 0.3);
+            display: block;
+            z-index: 3;
+            pointer-events: none;
+            border-radius: 50%;
+            @include transition(all, 0.3);
+            animation: rotate360R 20s linear infinite, shadowAnimate 5s linear infinite;
+            box-shadow: 0 0 10px 0 rgba(#fff, 0.5);
+          }
+
+          @keyframes shadowAnimate {
+            0% {
+              box-shadow: 0 0 10px 0 rgba(#fff, 0.5);
+            }
+
+            50% {
+              box-shadow: 10px 10px 10px 0 rgba(#fff, 0.5);
+            }
+
+            100% {
+              box-shadow: 0 0 10px 0 rgba(#fff, 0.5);
+            }
+          }
+
+          svg {
+            animation: rotate360 7s linear infinite;
+
+            circle {
+              stroke: #fff;
+              stroke-width: 2;
+              fill: none;
+              stroke-dashoffset: 350;
+              stroke-dasharray: 350;
+              animation: dash 7s linear infinite;
+              opacity: 0.5;
+            }
+          }
+        }
+
+
+        @keyframes dash {
+          0% {
+            stroke-dashoffset: 350;
+          }
+
+          100% {
+            stroke-dashoffset: -350;
+          }
         }
 
         &.active {
 
           &::before,
-          &::after {
+          &::after,
+          .play {
             opacity: 0;
           }
         }
@@ -862,6 +971,7 @@
         .bg {
           position: absolute;
           inset: 0;
+          animation: rotate360 30s linear infinite;
 
           &::before {
             content: '';
@@ -1038,7 +1148,7 @@
               transform: translateY(-50%);
               z-index: 2;
               transform-origin: left center;
-              @include transition(all, 0.3);
+              @include transition(all, 1);
 
               @include screen('mobile') {
                 border-radius: 0;
@@ -1115,9 +1225,12 @@
       }
     }
 
+    .container {
+      @include transition(all, 0.3);
+    }
+
     &:hover {
       .container {
-        @include transition(all, 0.3);
         margin: auto auto 0;
       }
 
@@ -1131,7 +1244,7 @@
         }
 
         .map {
-          top: 0;
+          animation: mapUse 0.5s linear forwards;
         }
       }
 
@@ -1178,7 +1291,7 @@
       flex-direction: column;
       overflow: hidden;
       isolation: isolate;
-      transition: width 0.3s ease;
+      // transition: width 0.3s ease;
       overflow: hidden;
 
       &::before {
@@ -1198,6 +1311,27 @@
         z-index: 9;
         overflow: hidden;
         @include transition(all, 0.3);
+
+        @keyframes mapUse {
+          0% {
+            width: 30%;
+            height: 50%;
+            border-radius: 50% 50% 50% 50% / 0% 0% 100% 100%;
+          }
+
+          50% {
+            width: 60%;
+            height: 70%;
+            border-radius: 37% 63% 71% 29% / 45% 56% 44% 55%;
+          }
+
+          100% {
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+          }
+        }
 
         &::before {
           content: '';

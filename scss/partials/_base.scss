@@ -54,7 +54,7 @@ html {
 
 body {
   position: relative;
-  max-width: 1920px;
+  // max-width: 1920px;
   margin: 0 auto;
   padding: 0;
   color: #000;
@@ -392,6 +392,10 @@ button {
 .innerPage {
   position: relative;
 
+  main {
+    position: relative;
+  }
+
   // head
   .siteHeader {
     &::before {
@@ -399,7 +403,7 @@ button {
     }
 
     &.headFixIn {
-      padding: 20px 0;
+      // padding: 20px 0;
 
       &::before {
         opacity: 1;
@@ -492,7 +496,8 @@ button {
 
   .mainBox {
     min-height: 100vh;
-    padding-top: 250px;
+    padding-top: 300px;
+    padding-bottom: 150px;
 
     @include screen('tablet') {
       padding-top: 100px;
@@ -507,7 +512,6 @@ button {
 
     .content {
       font-size: 18px;
-      padding: 50px 0 150px;
 
       &.smallSize {
         font-size: 14px;
@@ -524,15 +528,55 @@ button {
     width: 100%;
     inset: 0;
     overflow: hidden;
-    transform: scale(1.1);
+    z-index: -1;
 
     &::before {
       content: '';
       position: absolute;
       inset: 0px;
-      background: url("../images/in_bg.jpg") no-repeat center center;
       background-size: cover;
       filter: url("#turbulence");
+      transform: scale(1.1);
+    }
+
+    &.top {
+
+      &::before {
+        background: url("../images/in_bg.jpg") no-repeat center center;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70vh;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 80%);
+      }
+    }
+
+    &.bottom {
+      width: 100%;
+      height: 724px;
+      position: absolute;
+      inset: auto;
+      bottom: 0;
+      left: 0;
+
+      &::before {
+        mask: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 1) 100%);
+        background: url("../images/in_bg2.jpg") no-repeat center bottom;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70vh;
+      }
     }
   }
 
@@ -750,7 +794,6 @@ button {
   isolation: isolate;
   position: fixed;
   top: 0;
-  padding: 40px 0;
 
   @include screen('tablet') {
     padding: 40px 0;
@@ -760,17 +803,16 @@ button {
     padding: 10px 0;
   }
 
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    inset: -10px -10px 0;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    background: rgba(#FFF, 0.1);
-    filter: blur(4px);
-    @include transition(all, 0.3);
-  }
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   display: block;
+  //   inset: -10px -10px 0;
+  //   backdrop-filter: blur(6px);
+  //   background: rgba(#FFF, 0.1);
+  //   filter: blur(4px);
+  //   @include transition(all, 0.3);
+  // }
 }
 
 
@@ -887,7 +929,11 @@ button {
   top: 0;
   // background: #FFF;
   position: relative;
+  padding: 40px 0;
   @include transition(all, 0.3);
+  border-bottom: 1px solid rgba(#fff, 0.2);
+  backdrop-filter: blur(13px);
+  background: rgba(#FFF, 0.1);
 
   // @include screen('tabletMin') {
   //   padding-bottom: 25px;
@@ -1164,7 +1210,7 @@ button {
   }
 
   &::after {
-    background: #fff;
+    background: rgba(#fff, 0.8);
   }
 
   &::before {
@@ -1188,7 +1234,7 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  padding-top: 240px;
+  padding-top: 180px;
   display: none;
 
   @include screen('tablet') {
@@ -1278,6 +1324,7 @@ button {
 
             a,
             button {
+              padding-left: 20px;
               color: #fff;
 
               @include screen('tablet') {
@@ -1287,6 +1334,9 @@ button {
           }
 
           .nextMenuBox {
+            opacity: 1;
+            transform: translateX(0);
+
             &::before {
               background: #fff;
 
@@ -1361,15 +1411,15 @@ button {
             }
 
             .en {
-              font-size: Rem(48);
+              font-size: Rem(44);
               line-height: 1.2;
 
               @include screenWidth('1600') {
-                font-size: Rem(40);
+                font-size: Rem(38);
               }
 
               @include screenWidth('1300') {
-                font-size: Rem(30);
+                font-size: Rem(32);
               }
 
               @include screen('tablet') {
@@ -1396,7 +1446,7 @@ button {
           }
         }
 
-        $max: 7;
+        $max: 8;
 
         @for $i from 1 to $max {
           &:nth-child(#{$i}) {
@@ -1413,6 +1463,10 @@ button {
       display: flex;
       align-items: center;
       gap: 60px;
+      opacity: 0;
+      transform: translateX(-20px);
+      @include transition(all, 0.5);
+      transition-delay: 0.2s;
 
       @include screenWidth('1700') {
         gap: 30px;
@@ -1432,7 +1486,7 @@ button {
 
       ul {
         display: flex;
-        gap: 80px;
+        gap: 50px;
 
         @include screenWidth('1700') {
           gap: 30px;
@@ -2253,12 +2307,11 @@ footer {
 
 // pagination
 .pageBox {
-  padding-top: 30px;
-  margin-top: 30px;
+  margin-top: 100px;
 
   .pagination {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     @include screen('tablet') {
@@ -2272,7 +2325,7 @@ footer {
     }
 
     li {
-      margin: 0 15px;
+      margin: 0 10px;
       line-height: 1.5;
       text-align: center;
 
@@ -2308,21 +2361,8 @@ footer {
       }
 
       &.controls {
-
-        &:first-child {
-          margin: 0 20px 0 0;
-
-          @include screen('tablet') {
-            margin: 0 10px 0 0;
-          }
-        }
-
-        &:last-child {
-          margin: 0 0 0 20px;
-
-          @include screen('tablet') {
-            margin: 0 0 0 10px;
-          }
+        &:last-of-type {
+          margin: 0;
         }
 
         a {
@@ -2331,31 +2371,68 @@ footer {
           align-items: center;
           position: relative;
           font-size: Rem(15);
+          width: 76px;
+          height: 74px;
           font-weight: 500;
-          border-radius: 100%;
           border: none;
           @include transition(all, 0.3);
 
           &::before {
             content: '';
-            width: 10px;
-            height: 10px;
+            position: absolute;
+            inset: 0;
             display: block;
-            @include transition(all, 0.3);
-            border: 2px solid #777777;
-            border-width: 0 0 2px 2px;
-            transform: rotate(45deg);
+            background: #000;
+            border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            animation: arrowRadius 3s infinite linear;
           }
 
-          &.next {
+          &::after {
+            content: '';
+            width: 12px;
+            height: 8px;
+            display: block;
+            @include transition(all, 0.3);
+            background: url('../images/icon/icon_arrow_.svg') 0 0 no-repeat;
+            filter: invert(1);
+          }
+
+          &.prev {
+            margin-left: 20px;
+
             &::before {
-              border-width: 2px 2px 0 0;
+              animation-direction: reverse;
+              animation-duration: 6s;
             }
           }
 
-          &:hover {
-            &::before {
-              border-color: $mainColor;
+          &.next {
+            &::after {
+              transform: scaleX(-1);
+            }
+          }
+
+          // &:hover {
+          //   &::before {
+          //     animation: rotate360 10s infinite linear;
+          //   }
+          // }
+
+          @keyframes arrowRadius {
+            0% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            }
+
+            25% {
+              border-radius: 56% 44% 31% 69% / 67% 52% 48% 33%;
+            }
+
+            50% {
+              border-radius: 56% 44% 45% 55% / 37% 72% 28% 63%;
+            }
+
+            100% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
             }
           }
         }
