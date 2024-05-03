@@ -11,9 +11,14 @@
 
     .item {
       width: calc((100% - var(--gap) * 2) / 3);
+      @include transition(all, 0.3);
 
       &:hover {
+
         .pic {
+          box-shadow: 5px 5px 10px 0 rgba(#000, 0.2);
+          transform: translate(-5px, -5px);
+
           &::after {
             opacity: 0;
           }
@@ -26,6 +31,8 @@
       overflow: hidden;
       margin-bottom: 30px;
       position: relative;
+      box-shadow: 10px 10px 10px 0 rgba(#000, 0);
+      @include transition(all, 0.3);
 
       &::after {
         content: '';
@@ -37,7 +44,7 @@
     }
 
     .title {
-      font-size: Rem(22);
+      font-size: Em(22);
       font-weight: 500;
       overflow: hidden;
       display: -webkit-box;
@@ -49,7 +56,7 @@
 
     .description {
       color: #3b3939;
-      font-size: Rem(18);
+      font-size: Em(18);
     }
   }
 }

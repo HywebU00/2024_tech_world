@@ -141,6 +141,7 @@
             background: #000;
             border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
             animation: arrowRadius 3s infinite linear;
+            @include transition(all, 0.3);
           }
 
           &::after {
@@ -165,6 +166,20 @@
           &.next {
             &::after {
               transform: scaleX(-1);
+            }
+          }
+
+          &:hover {
+            &.prev {
+              &::before {
+                background: #e20014;
+              }
+            }
+
+            &.next {
+              &::before {
+                background: #0169b8;
+              }
             }
           }
 

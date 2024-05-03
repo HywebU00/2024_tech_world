@@ -547,6 +547,7 @@
   .activitiesTitleBox {
     background: #fff;
     padding-top: 6%;
+    overflow: hidden;
 
     .blockTitle {
       position: relative;
@@ -872,6 +873,7 @@
     position: relative;
     padding-bottom: 390px;
     padding-top: 1px;
+    overflow: hidden;
 
     .filtered {
       position: fixed;
@@ -1071,6 +1073,10 @@
         align-items: center;
         gap: 50px;
 
+        @include screen('mobile') {
+          gap: 30px;
+        }
+
         .item {
           min-width: 25vw;
           flex-shrink: 0;
@@ -1269,7 +1275,7 @@
 
         @include screen('mobile') {
           margin-bottom: -10px;
-          font-size: Rem(60);
+          font-size: Rem(55);
         }
       }
 

@@ -414,7 +414,10 @@ button {
       }
 
       .slogan {
-        display: none;
+        @include screenWidthMin('1220') {
+          display: none;
+        }
+
         // top: 0;
         // padding-bottom: 0px;
 
@@ -447,13 +450,18 @@ button {
       }
 
       .inMenu {
-        top: 20px;
+        top: -5px;
+        bottom: auto;
       }
     }
   }
 
   .slogan {
     top: 20%;
+
+    @include screenWidth('1220') {
+      top: 50%;
+    }
 
     @include screen('mobile') {
       top: 30%;
@@ -466,7 +474,7 @@ button {
     transform: translateX(-50%);
     bottom: 0px;
 
-    @include screenWidth('1100') {
+    @include screenWidth('1220') {
       display: none;
     }
 
@@ -476,11 +484,64 @@ button {
 
       li {
         margin: 0 20px;
+        padding: 20px 0;
+        position: relative;
+
+        @include screenWidth('1450') {
+          margin: 0 10px;
+        }
       }
 
       a {
+        font-size: Rem(22);
         color: #000;
         white-space: nowrap;
+
+        @include screenWidth('1450') {
+          font-size: Rem(18);
+        }
+      }
+    }
+
+    .nextMenuBox {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(calc(-50% + 10px));
+      box-shadow: 5px 5px 5px 0 rgba(#000, 0.1);
+      padding: 10px;
+      border-radius: 10px;
+      background: rgba(#fff, 1);
+      opacity: 0;
+      pointer-events: none;
+      @include transition(all, 0.3);
+
+      &.active {
+        opacity: 1;
+        transform: translateX(-50%);
+        pointer-events: unset;
+      }
+
+      ul {
+        flex-direction: column;
+        padding: 0;
+      }
+
+      li {
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        padding: 5px;
+        font-size: Rem(18);
+        @include transition(all, 0.3);
+
+        &:hover {
+          color: #e20014;
+        }
       }
     }
   }
@@ -794,14 +855,19 @@ button {
   isolation: isolate;
   position: fixed;
   top: 0;
+  @include transition(all, 0.3);
 
-  @include screen('tablet') {
-    padding: 40px 0;
+  &.active {
+    background: #fff;
   }
 
-  @include screen('mobile') {
-    padding: 10px 0;
-  }
+  // @include screen('tablet') {
+  //   padding: 40px 0;
+  // }
+
+  // @include screen('mobile') {
+  //   padding: 10px 0;
+  // }
 
   // &::before {
   //   content: '';
@@ -935,9 +1001,13 @@ button {
   backdrop-filter: blur(13px);
   background: rgba(#FFF, 0.1);
 
-  // @include screen('tabletMin') {
-  //   padding-bottom: 25px;
-  // }
+  @include screenWidth('1220') {
+    padding: 20px 0;
+  }
+
+  @include screen('mobile') {
+    padding: 10px 0;
+  }
 
   .container {
     max-width: 1590px;
@@ -1238,7 +1308,7 @@ button {
   display: none;
 
   @include screen('tablet') {
-    padding-top: 80px;
+    padding-top: 100px;
   }
 
   &.active {
@@ -1307,41 +1377,41 @@ button {
         gap: 20px;
       }
 
-      @include screen('mobile') {
-        gap: 30px;
-      }
 
       & > li {
         position: relative;
 
         &:hover {
+          @include screenWidthMin('1240') {
+            .out {
+              &::before {
+                opacity: 1;
+                width: 100%;
+              }
 
-          .out {
-            &::before {
-              opacity: 1;
-              width: 100%;
-            }
+              a,
+              button {
+                padding-left: 20px;
+                color: #fff;
 
-            a,
-            button {
-              padding-left: 20px;
-              color: #fff;
-
-              @include screen('tablet') {
-                color: #000;
+                // @include screenWidth('1240') {
+                //   color: #000;
+                // }
               }
             }
-          }
 
-          .nextMenuBox {
-            opacity: 1;
-            transform: translateX(0);
+            .nextMenuBox {
+              opacity: 1;
+              transform: translateX(0);
 
-            &::before {
-              background: #fff;
+              ul {
+                &::before {
+                  background: #fff;
 
-              @include screenWidth('1200') {
-                background: #000;
+                  @include screenWidth('1240') {
+                    background: #000;
+                  }
+                }
               }
             }
           }
@@ -1384,8 +1454,8 @@ button {
             opacity: 0;
             @include transition(all, 0.3);
 
-            @include screen('mobile') {
-              display: none;
+            @include screenWidth('1200') {
+              border-radius: 20px;
             }
           }
 
@@ -1460,37 +1530,53 @@ button {
 
     .nextMenuBox {
       z-index: 9;
-      display: flex;
       align-items: center;
       gap: 60px;
-      opacity: 0;
-      transform: translateX(-20px);
-      @include transition(all, 0.5);
-      transition-delay: 0.2s;
+      display: none;
+
+      @include screenWidthMin('1240') {
+        opacity: 0;
+        transition-delay: 0.2s;
+        transform: translateX(-20px);
+      }
+
+      @include screen('tablet') {
+        padding-top: 20px;
+      }
+
+      &.active {
+        display: flex;
+      }
 
       @include screenWidth('1700') {
         gap: 30px;
       }
 
-      &::before {
-        content: '';
-        height: 1px;
-        width: 60px;
-        display: block;
-        background: #000;
-
-        @include screen('mobile') {
-          width: 30px;
-        }
-      }
-
       ul {
         display: flex;
+        align-items: center;
         gap: 50px;
 
         @include screenWidth('1700') {
           gap: 30px;
         }
+
+        @include screen('tablet') {
+          gap: 20px;
+        }
+
+        &::before {
+          content: '';
+          height: 1px;
+          width: 60px;
+          display: block;
+          background: #000;
+
+          @include screen('mobile') {
+            width: 30px;
+          }
+        }
+
       }
 
       a {
@@ -1639,7 +1725,7 @@ button {
 
 .sideMobile {
   opacity: 0;
-  margin-top: 60px;
+  margin-top: 40px;
   display: none;
   padding: 20px;
   border: 1px solid #000;
@@ -1659,6 +1745,10 @@ button {
     a {
       color: #000;
       font-size: Rem(20);
+
+      @include screen('tablet') {
+        font-size: Rem(18);
+      }
     }
   }
 }
@@ -2349,14 +2439,13 @@ footer {
         }
 
         &:hover {
-          color: $mainColor;
+          color: #e20014;
         }
       }
 
       &.active {
         a {
-          color: $mainColor;
-          border-color: $mainColor;
+          color: #e20014;
         }
       }
 
@@ -2385,6 +2474,7 @@ footer {
             background: #000;
             border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
             animation: arrowRadius 3s infinite linear;
+            @include transition(all, 0.3);
           }
 
           &::after {
@@ -2412,11 +2502,19 @@ footer {
             }
           }
 
-          // &:hover {
-          //   &::before {
-          //     animation: rotate360 10s infinite linear;
-          //   }
-          // }
+          &:hover {
+            &.prev {
+              &::before {
+                background: #e20014;
+              }
+            }
+
+            &.next {
+              &::before {
+                background: #0169b8;
+              }
+            }
+          }
 
           @keyframes arrowRadius {
             0% {

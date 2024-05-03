@@ -117,6 +117,10 @@ $screen-xs-max: (
 );
 }
 
+@function Em($n: $mainFontSize) {
+  @return calc($n / $mainFontSize * 1em);
+}
+
 // more
 
 //font-size

@@ -165,24 +165,6 @@
     });
   }
 
-  //menuUse
-  const menuBg = document.querySelector('.menuBg');
-  const mobileBtn = document.querySelector('.mobileBtn');
-  const menuBox = document.querySelector('.menuBox');
-  const language = document.querySelector('.language');
-  mobileBtn.addEventListener('click', () => {
-    menuBg.classList.toggle('active');
-    mobileBtn.classList.toggle('active');
-    language.classList.toggle('active');
-    siteHeader.classList.toggle('active');
-
-    if (menuBox.classList.contains('active')) {
-      menuBox.classList.remove('active');
-    } else {
-      menuBox.classList.add('active');
-    }
-  });
-
   // bannerUse
   const videoBox = document.querySelector('.bannerBox');
   const video = document.querySelector('.video');
