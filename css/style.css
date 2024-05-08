@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("../plugins/slick/1.9/slick.min.css");
 @import url("../plugins/swiper-master/swiper-bundle.min.css");
 @import url("../plugins/WOW-master/css/libs/animate.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
@@ -786,7 +787,7 @@ button:focus {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0px;
+  bottom: -25px;
 }
 @media screen and (max-width: 1220px) {
   .innerPage .inMenu {
@@ -799,7 +800,7 @@ button:focus {
 }
 .innerPage .inMenu ul li {
   margin: 0 20px;
-  padding: 20px 0;
+  padding: 15px 0;
   position: relative;
 }
 @media screen and (max-width: 1450px) {
@@ -808,7 +809,7 @@ button:focus {
   }
 }
 .innerPage .inMenu ul a {
-  font-size: 1.2222222222rem;
+  font-size: 1.1111111111rem;
   color: #000;
   white-space: nowrap;
 }
@@ -862,7 +863,7 @@ button:focus {
 }
 .innerPage .mainBox {
   min-height: 100vh;
-  padding-top: 300px;
+  padding-top: 200px;
   padding-bottom: 150px;
 }
 @media screen and (max-width: 1023px) {
@@ -871,8 +872,8 @@ button:focus {
   }
 }
 .innerPage .mainBox .pageTitle {
-  font-size: 2.8em;
-  font-weight: 500;
+  font-size: 2.4em;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 60px;
 }
@@ -901,7 +902,7 @@ button:focus {
   transform: scale(1.1);
 }
 .innerPage .filtered.top::before {
-  background: url("../images/in_bg.jpg") no-repeat center center;
+  background: url("../images/in_bg.jpg") no-repeat top left;
 }
 .innerPage .filtered.top::after {
   content: "";
@@ -937,6 +938,7 @@ button:focus {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 30px;
 }
 .innerPage .functionPanel .fontSize {
   display: flex;
@@ -1130,7 +1132,7 @@ button:focus {
   z-index: 9;
 }
 .logo img {
-  height: 147px;
+  height: 77px;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1023px) {
@@ -1151,7 +1153,7 @@ button:focus {
   transform: translate(-50%, -50%);
   width: -moz-fit-content;
   width: fit-content;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   white-space: nowrap;
 }
 @media screen and (max-width: 1023px) {
@@ -1166,12 +1168,12 @@ button:focus {
 }
 .slogan .day .letter {
   line-height: 1.2;
-  font-size: 1.3888888889rem;
+  font-size: 1rem;
   display: inline-block;
 }
 @media screen and (max-width: 1023px) {
   .slogan .day .letter {
-    font-size: 1.1111111111rem;
+    font-size: 0.8888888889rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1181,7 +1183,7 @@ button:focus {
 }
 .slogan .day .letter:nth-child(1), .slogan .day .letter:nth-child(2) {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 3.3333333333rem;
+  font-size: 2.2222222222rem;
   color: #e30078;
   line-height: 0.7;
   display: inline-block;
@@ -1189,7 +1191,7 @@ button:focus {
 }
 @media screen and (max-width: 1023px) {
   .slogan .day .letter:nth-child(1), .slogan .day .letter:nth-child(2) {
-    font-size: 2.2222222222rem;
+    font-size: 1.4444444444rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1236,7 +1238,7 @@ button:focus {
   height: 100%;
   top: 0;
   position: relative;
-  padding: 40px 0;
+  padding: 21px 0;
   transition: all 0.3s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(13px);
@@ -1428,7 +1430,6 @@ button:focus {
 .menuBg::before {
   border-radius: 40% 60% 39% 61%/54% 39% 61% 46%;
   background: url("../images/activities_bg.jpg") center repeat;
-  background-size: 50%;
   animation: rotate360 15s infinite linear;
   z-index: -1;
 }
@@ -2230,7 +2231,6 @@ footer .bottomBox .infoBox .copyright {
   transition: all 0.3s ease;
   background: none;
   border: none;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   width: 60px;
   height: 60px;
   z-index: 90;
@@ -2238,7 +2238,6 @@ footer .bottomBox .infoBox .copyright {
   align-items: center;
   position: relative;
   margin-left: 40px;
-  background: #fff;
   border-radius: 5px;
 }
 @media screen and (max-width: 1023px) {
@@ -2404,6 +2403,45 @@ footer .bottomBox .infoBox .copyright {
 .pageBox {
   margin-top: 100px;
 }
+.pageBox > ul.changePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.pageBox > ul.changePage a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  font-size: 1.3333333333rem;
+  padding: 25px 50px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.pageBox > ul.changePage a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 250%;
+  aspect-ratio: 1;
+  opacity: 0.4;
+  left: 0;
+  transform: translate(-50%, 0%);
+  background: radial-gradient(ellipse at center, rgb(150, 138, 158) 0%, rgba(150, 138, 158, 0) 50%);
+  transition: all 0.3s ease;
+}
+.pageBox > ul.changePage a:hover::before {
+  left: 100%;
+}
 .pageBox .pagination {
   display: flex;
   justify-content: flex-end;
@@ -2438,6 +2476,7 @@ footer .bottomBox .infoBox .copyright {
   font-weight: 500;
   font-size: 0.8888888889rem;
   color: #666666;
+  background: none;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1023px) {
@@ -3675,6 +3714,8 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   padding-bottom: 390px;
   padding-top: 1px;
+}
+.index .activitiesBox .bg {
   overflow: hidden;
 }
 .index .activitiesBox .filtered {
@@ -4145,16 +4186,39 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .linkBox .listBox {
+  --gap: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  gap: 20px;
+  gap: var(--gap);
 }
 @media screen and (max-width: 767px) {
   .index .linkBox .listBox {
-    gap: 10px;
+    --gap: 10px;
     justify-content: center;
   }
+}
+.index .linkBox .listBox .item {
+  width: calc((100% - var(--gap) * 3) / 4);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1023px) {
+  .index .linkBox .listBox .item {
+    width: calc((100% - var(--gap) * 2) / 3);
+  }
+}
+@media screen and (max-width: 767px) {
+  .index .linkBox .listBox .item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (max-width: 575px) {
+  .index .linkBox .listBox .item {
+    width: 100%;
+  }
+}
+.index .linkBox .listBox .pic {
+  aspect-ratio: 287/93;
 }
 .index .linkBox .listBox a {
   display: flex;
@@ -4177,11 +4241,26 @@ table.tableSprite tr:nth-child(even) {
   --gap: 50px;
   display: flex;
   flex-wrap: wrap;
-  gap: 100px var(--gap);
+  gap: calc(var(--gap)) var(--gap);
+}
+@media screen and (max-width: 767px) {
+  .lp .listBox {
+    --gap: 30px;
+  }
 }
 .lp .listBox .item {
   width: calc((100% - var(--gap) * 2) / 3);
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .lp .listBox .item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (max-width: 575px) {
+  .lp .listBox .item {
+    width: 100%;
+  }
 }
 .lp .listBox .item:hover .pic {
   box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
@@ -4197,6 +4276,8 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
+  aspect-ratio: 43/31;
+  overflow: hidden;
 }
 .lp .listBox .pic::after {
   content: "";
@@ -4206,7 +4287,7 @@ table.tableSprite tr:nth-child(even) {
   transition: all 0.3s ease;
 }
 .lp .listBox .title {
-  font-size: 1.2222222222em;
+  font-size: 1.1111111111em;
   font-weight: 500;
   overflow: hidden;
   display: -webkit-box;
@@ -4215,9 +4296,296 @@ table.tableSprite tr:nth-child(even) {
   margin-bottom: 20px;
   color: #0b0b0b;
 }
+@media screen and (max-width: 767px) {
+  .lp .listBox .title {
+    font-size: 1em;
+  }
+}
 .lp .listBox .description {
   color: #3b3939;
   font-size: 1em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.lp2 .listBox {
+  --gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 2) var(--gap);
+}
+@media screen and (max-width: 767px) {
+  .lp2 .listBox {
+    --gap: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lp2 .listBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 767px) {
+  .lp2 .listBox .item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (max-width: 575px) {
+  .lp2 .listBox .item {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .lp2 .listBox .item:nth-child(even) .info::before {
+    right: auto;
+    left: 0;
+  }
+  .lp2 .listBox .item:nth-child(even) .pic {
+    order: 3;
+  }
+}
+.lp2 .listBox .item:hover .info::before {
+  width: 100%;
+}
+.lp2 .listBox .item:hover .pic {
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+  transform: translate(-5px, -5px);
+}
+.lp2 .listBox .item:hover .pic::after {
+  opacity: 0;
+}
+.lp2 .listBox a {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+@media screen and (max-width: 767px) {
+  .lp2 .listBox a {
+    flex-direction: column;
+  }
+}
+.lp2 .listBox .pic {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+  aspect-ratio: 43/31;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .lp2 .listBox .pic {
+    width: 300px;
+  }
+}
+.lp2 .listBox .pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+.lp2 .listBox .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  align-self: stretch;
+}
+.lp2 .listBox .info::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+.lp2 .listBox .title {
+  font-size: 1.1111111111em;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin: 0px;
+  color: #0b0b0b;
+}
+@media screen and (max-width: 767px) {
+  .lp2 .listBox .title {
+    font-size: 1em;
+  }
+}
+.lp2 .listBox .description {
+  color: #3b3939;
+  font-size: 1em;
+  overflow: hidden;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.lp3 .listBox {
+  --gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gap)) var(--gap);
+}
+@media screen and (max-width: 767px) {
+  .lp3 .listBox {
+    --gap: 30px;
+  }
+}
+.lp3 .listBox .item {
+  width: calc((100% - var(--gap) * 2) / 3);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 767px) {
+  .lp3 .listBox .item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+}
+@media screen and (max-width: 575px) {
+  .lp3 .listBox .item {
+    width: 100%;
+  }
+}
+.lp3 .listBox .item:hover .pic {
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+  transform: translate(-5px, -5px);
+}
+.lp3 .listBox .item:hover .pic::after {
+  opacity: 0;
+}
+.lp3 .listBox .pic {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+  aspect-ratio: 43/31;
+  overflow: hidden;
+}
+.lp3 .listBox .pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+.lp3 .listBox .title {
+  font-size: 1.1111111111em;
+  font-weight: 500;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 20px;
+  color: #0b0b0b;
+}
+.lp3 .listBox .description {
+  color: #3b3939;
+  font-size: 1em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.lp3 .listBox + .otherList {
+  margin-top: 5%;
+  padding-top: 5%;
+  border-top: 1px solid #000;
+}
+.lp3 .listBox.otherList {
+  --gap: 30px;
+}
+.lp3 .listBox.otherList .item {
+  width: calc((100% - var(--gap) * 3) / 4);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1023px) {
+  .lp3 .listBox.otherList .item {
+    width: calc((100% - var(--gap) * 2) / 3);
+  }
+}
+@media screen and (max-width: 767px) {
+  .lp3 .listBox.otherList .item {
+    width: calc((100% - var(--gap)) / 2);
+  }
+  .lp3 .listBox.otherList .item .pic {
+    margin-bottom: 10px;
+  }
+}
+.lp3 .listBox.otherList .pic {
+  aspect-ratio: 287/93;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+.lp3 .listBox.otherList .pic::after {
+  display: none;
+}
+.lp3 .listBox.otherList .title {
+  -webkit-line-clamp: 1;
+  margin-bottom: 0px;
+}
+
+.lp4 .listBox .pic {
+  width: 100%;
+  transform: none !important;
+}
+.lp4 .listBox .pic::after {
+  display: none;
+}
+.lp4 .listBox .info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.lp4 .listBox .title {
+  -webkit-line-clamp: 2;
+  margin-bottom: 0px;
+  padding-bottom: 0;
+  min-height: 70px;
+}
+.lp4 .download {
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  background: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.lp4 .download div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+}
+.lp4 .download div + div {
+  position: absolute;
+  top: 100%;
+}
+.lp4 .download:hover div {
+  transform: translateY(-100%);
 }
 
 .innerPage .cp .mainBox .container {
@@ -4265,24 +4633,27 @@ table.tableSprite tr:nth-child(even) {
 .innerPage .cp .mainBox .cpPicListBox .picBox {
   padding: 50px 0;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
-.innerPage .cp .mainBox .cpPicListBox .picBox .listBox {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.innerPage .cp .mainBox .cpPicListBox .picBox .slick-list {
+  overflow: visible;
 }
 .innerPage .cp .mainBox .cpPicListBox .picBox .item {
   flex-shrink: 0;
-  width: 280px;
-  border-radius: 15px;
   overflow: hidden;
-  line-height: 0;
+  padding-right: 30px;
   transition: all 0.3s ease;
 }
+.innerPage .cp .mainBox .cpPicListBox .picBox .item a {
+  display: block;
+  max-width: 280px;
+  line-height: 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
 .innerPage .cp .mainBox .cpPicListBox .picBox .item:hover {
-  width: 400px;
-  margin: -50px 0;
+  padding: 0 65px 0 45px;
+  transform: scale(1.3);
 }
 .innerPage .cp .mainBox .cpPicListBox .controlBox {
   max-width: 1200px;
@@ -4331,6 +4702,7 @@ table.tableSprite tr:nth-child(even) {
   height: 74px;
   font-weight: 500;
   border: none;
+  background: none;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1023px) {
@@ -4388,4 +4760,144 @@ table.tableSprite tr:nth-child(even) {
   100% {
     border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
   }
+}
+
+.qa .qaListBox {
+  margin-bottom: 10%;
+}
+.qa .qaListBox ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.qa .qaListBox .active .qBox {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+.qa .qaListBox .active .qBox::after {
+  border-width: 0 12px 14px;
+  border-color: transparent transparent #000000;
+}
+.qa .qaListBox .qBox {
+  height: 130px;
+  width: 100%;
+  display: block;
+  padding: 20px 7% 15px;
+  position: relative;
+  border-radius: 80px;
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  background: url("../images/qa_bg.jpg") left center no-repeat;
+  text-align: left;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  font-size: 1.5555555556rem;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1023px) {
+  .qa .qaListBox .qBox {
+    font-size: 1.3333333333rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .qa .qaListBox .qBox {
+    font-size: 1.1111111111rem;
+    height: 80px;
+  }
+}
+.qa .qaListBox .qBox::after {
+  content: "";
+  position: absolute;
+  right: 7%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 12px 0;
+  border-color: #000000 transparent transparent;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 1023px) {
+  .qa .qaListBox .qBox::after {
+    border-width: 7px 6px 0;
+  }
+}
+.qa .qaListBox .aBox {
+  padding: 50px 7%;
+  font-size: 1.1111111111rem;
+  display: none;
+  color: #3b3939;
+  color: #3b3939;
+  line-height: 2.4;
+}
+@media screen and (max-width: 1023px) {
+  .qa .qaListBox .aBox {
+    line-height: 1.8;
+  }
+}
+.qa .tagBox {
+  margin-bottom: 5%;
+}
+.qa .tagBox .listBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.qa .tagBox .listBox a {
+  display: flex;
+  padding: 15px 30px 13px;
+  text-align: center;
+  font-size: 1.1111111111rem;
+  border-radius: 50px;
+  border: 1px solid #7f7f7f;
+  color: #3b393a;
+  transition: all 0.3s ease;
+}
+.qa .tagBox .listBox a:hover {
+  background: #000;
+  color: #fff;
+}
+.qa .tagBox .listBox .active a {
+  background: #000;
+  color: #fff;
+}
+.qa .expoLogo {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 50px;
+  margin-bottom: -50px;
+}
+.qa .expoLogo svg {
+  filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.05));
+  opacity: 0.6;
+}
+.qa .expoLogo .infoBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qa .expoLogo .infoBox .pic {
+  max-width: 90px;
+}
+.qa .expoLogo .infoBox .title {
+  text-align: center;
+  font-size: 1.3333333333rem;
+  color: #0c78d2;
+  font-weight: 500;
+  font-family: "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif;
+  line-height: 1.4;
+}
+.qa .expoLogo .infoBox .title span {
+  display: block;
+  font-size: 1.6666666667rem;
+  color: #e70014;
+  white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */

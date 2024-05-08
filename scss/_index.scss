@@ -873,7 +873,10 @@
     position: relative;
     padding-bottom: 390px;
     padding-top: 1px;
-    overflow: hidden;
+
+    .bg {
+      overflow: hidden;
+    }
 
     .filtered {
       position: fixed;
@@ -1399,14 +1402,36 @@
     }
 
     .listBox {
+      --gap: 20px;
       display: flex;
       flex-wrap: wrap;
       align-items: stretch;
-      gap: 20px;
+      gap: var(--gap);
 
       @include screen('mobile') {
-        gap: 10px;
+        --gap: 10px;
         justify-content: center;
+      }
+
+      .item {
+        width: calc((100% - var(--gap) * 3) / 4);
+        @include transition(all, 0.3);
+
+        @include screen('tablet') {
+          width: calc((100% - var(--gap) * 2) / 3);
+        }
+
+        @include screen('mobile') {
+          width: calc((100% - var(--gap)) / 2);
+        }
+
+        @include screen('xs_mobile') {
+          width: 100%;
+        }
+      }
+
+      .pic {
+        aspect-ratio: 287/93;
       }
 
       a {

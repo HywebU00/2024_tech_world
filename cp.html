@@ -248,7 +248,7 @@
             </div>
           </div>
           <div class="cpPicListBox">
-            <div class="picBox">
+            <div class="picBox wow fadeInUp" data-wow-delay="0s">
               <div class="listBox">
                 <div class="item">
                   <a href="#"><img src="images/lp.jpg" alt="" /></a>
@@ -273,9 +273,16 @@
                 </div>
               </div>
             </div>
-            <ul class="controlBox wow fadeInUp" data-wow-delay="0.2s">
+            <ul class="controlBox wow fadeInDown" data-wow-delay="0.2s">
               <li><button type="button" class="prev" title="Previous"></button></li>
               <li><button type="button" class="next" title="Next"></button></li>
+            </ul>
+          </div>
+
+          <div class="pageBox wow fadeInUp" data-wow-delay="0.2s">
+            <ul class="changePage">
+              <li><a href="#">上一篇</a></li>
+              <li><a href="#">下一篇</a></li>
             </ul>
           </div>
         </div>
@@ -338,25 +345,11 @@
     <script src="plugins/jquery-3.7.1.min.js"></script>
     <script src="plugins/WOW-master/dist/wow.min.js"></script>
     <script src="plugins/gsap.min.js"></script>
+    <script src="plugins/slick/1.9/slick.min.js"></script>
     <script src="plugins/ScrollTrigger.min.js"></script>
     <script src="plugins/anime.min.js"></script>
     <!-- <script src="plugins/shine/shine.min.js"></script> -->
     <script src="plugins/_base.js"></script>
     <script src="plugins/_customize.js"></script>
-    <script>
-      const picControlPrev = document.querySelector('.controlBox .prev');
-      const picControlNext = document.querySelector('.controlBox .next');
-      const cpList = document.querySelector('.cpPicListBox .picBox .listBox');
-      const cpListWidth = cpList.scrollWidth;
-      const cpPicItem = cpList.querySelectorAll('.item');
-      const cpPicItemWidth = cpPicItem[0].offsetWidth;
-
-      picControlNext.addEventListener('click', (e) => {
-        cpList.cpPicItemWidth;
-      });
-      picControlPrev.addEventListener('click', (e) => {
-        cpList.scrollLeft -= cpPicItemWidth;
-      });
-    </script>
   </body>
 </html>

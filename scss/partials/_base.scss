@@ -472,7 +472,7 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0px;
+    bottom: -25px;
 
     @include screenWidth('1220') {
       display: none;
@@ -484,7 +484,7 @@ button {
 
       li {
         margin: 0 20px;
-        padding: 20px 0;
+        padding: 15px 0;
         position: relative;
 
         @include screenWidth('1450') {
@@ -493,7 +493,7 @@ button {
       }
 
       a {
-        font-size: Rem(22);
+        font-size: Rem(20);
         color: #000;
         white-space: nowrap;
 
@@ -557,7 +557,7 @@ button {
 
   .mainBox {
     min-height: 100vh;
-    padding-top: 300px;
+    padding-top: 200px;
     padding-bottom: 150px;
 
     @include screen('tablet') {
@@ -565,8 +565,8 @@ button {
     }
 
     .pageTitle {
-      font-size: 2.8em;
-      font-weight: 500;
+      font-size: 2.4em;
+      font-weight: 400;
       text-align: center;
       margin-bottom: 60px;
     }
@@ -603,7 +603,7 @@ button {
     &.top {
 
       &::before {
-        background: url("../images/in_bg.jpg") no-repeat center center;
+        background: url("../images/in_bg.jpg") no-repeat top left;
       }
 
       &::after {
@@ -646,6 +646,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-bottom: 30px;
 
     .fontSize {
       display: flex;
@@ -891,7 +892,7 @@ button {
   z-index: 9;
 
   img {
-    height: 147px;
+    height: 77px;
     @include transition(all, 0.3);
 
     @include screen('tablet') {
@@ -910,7 +911,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   white-space: nowrap;
 
   @include screen('tablet') {
@@ -925,11 +926,11 @@ button {
 
     .letter {
       line-height: 1.2;
-      font-size: Rem(25);
+      font-size: Rem(18);
       display: inline-block;
 
       @include screen('tablet') {
-        font-size: Rem(20);
+        font-size: Rem(16);
       }
 
       @include screen('mobile') {
@@ -939,14 +940,14 @@ button {
       &:nth-child(1),
       &:nth-child(2) {
         font-family: "Josefin Sans", sans-serif;
-        font-size: Rem(60);
+        font-size: Rem(40);
         color: #e30078;
         line-height: 0.7;
         display: inline-block;
         line-height: 0.7;
 
         @include screen('tablet') {
-          font-size: Rem(40);
+          font-size: Rem(26);
         }
 
         @include screen('mobile') {
@@ -995,7 +996,7 @@ button {
   top: 0;
   // background: #FFF;
   position: relative;
-  padding: 40px 0;
+  padding: 21px 0;
   @include transition(all, 0.3);
   border-bottom: 1px solid rgba(#fff, 0.2);
   backdrop-filter: blur(13px);
@@ -1286,7 +1287,6 @@ button {
   &::before {
     border-radius: 40% 60% 39% 61% / 54% 39% 61% 46%;
     background: url('../images/activities_bg.jpg') center repeat;
-    background-size: 50%;
     animation: rotate360 15s infinite linear;
     z-index: -1;
   }
@@ -2184,7 +2184,7 @@ footer {
   @include transition(all, 0.3);
   background: none;
   border: none;
-  box-shadow: 0 0 10px 0 rgba(#000, 0.1);
+  // box-shadow: 0 0 10px 0 rgba(#000, 0.1);
   // @include screen('tablet') {
   width: 60px;
   height: 60px;
@@ -2193,7 +2193,7 @@ footer {
   align-items: center;
   position: relative;
   margin-left: 40px;
-  background: #fff;
+  // background: #fff;
   border-radius: 5px;
 
   @include screen('tablet') {
@@ -2399,6 +2399,51 @@ footer {
 .pageBox {
   margin-top: 100px;
 
+  & > ul.changePage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+      border-radius: 50px;
+      font-size: Rem(24);
+      padding: 25px 50px;
+      color: #000;
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 250%;
+        aspect-ratio: 1;
+        opacity: 0.4;
+        left: 0;
+        transform: translate(-50%, 0%);
+        background: radial-gradient(ellipse at center, rgba(150, 138, 158, 1) 0%, rgba(150, 138, 158, 0) 50%);
+        @include transition(all, 0.3);
+      }
+
+      &:hover {
+        &::before {
+          left: 100%;
+        }
+      }
+    }
+  }
+
   .pagination {
     display: flex;
     justify-content: flex-end;
@@ -2430,6 +2475,7 @@ footer {
         font-weight: 500;
         font-size: Rem(16);
         color: #666666;
+        background: none;
         @include transition(all, 0.3);
 
         @include screen('tablet') {

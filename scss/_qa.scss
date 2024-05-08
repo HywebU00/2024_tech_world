@@ -1,0 +1,160 @@
+// 資料庫
+@import './partials/mixin';
+@import './partials/variable';
+
+.qa {
+  .qaListBox {
+    margin-bottom: 10%;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .active {
+      .qBox {
+        box-shadow: 0 0 20px 0 rgba(#000, 0.2);
+
+        &::after {
+          border-width: 0 12px 14px;
+          border-color: transparent transparent #000000;
+        }
+      }
+    }
+
+    .qBox {
+      height: 130px;
+      width: 100%;
+      display: block;
+      padding: 20px 7% 15px;
+      position: relative;
+      border-radius: 80px;
+      background: rgba(255, 255, 255, 0);
+      border: 1px solid #fff;
+      backdrop-filter: blur(0px);
+      background: url('../images/qa_bg.jpg') left center no-repeat;
+      text-align: left;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 20px 0 rgba(#000, 0.1);
+      font-size: Rem(28);
+      @include transition(all, 0.3);
+
+      @include screen('tablet') {
+        font-size: Rem(24);
+      }
+
+      @include screen('mobile') {
+        font-size: Rem(20);
+        height: 80px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 7%;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 14px 12px 0;
+        border-color: #000000 transparent transparent;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include screen('tablet') {
+          border-width: 7px 6px 0;
+        }
+      }
+    }
+
+    .aBox {
+      padding: 50px 7%;
+      font-size: Rem(20);
+      display: none;
+      color: #3b3939;
+      color: #3b3939;
+      line-height: 2.4;
+
+      @include screen('tablet') {
+        line-height: 1.8;
+      }
+
+    }
+  }
+
+  .tagBox {
+    margin-bottom: 5%;
+
+    .listBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+
+      a {
+        display: flex;
+        padding: 15px 30px 13px;
+        text-align: center;
+        font-size: Rem(20);
+        border-radius: 50px;
+        border: 1px solid #7f7f7f;
+        color: #3b393a;
+        @include transition(all, 0.3);
+
+        &:hover {
+          background: #000;
+          color: #fff;
+        }
+      }
+
+      .active a {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+
+  .expoLogo {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 50px;
+    margin-bottom: -50px;
+
+    svg {
+      filter: drop-shadow(0 0 25px rgba(#000, 0.05));
+      opacity: 0.6;
+    }
+
+    .infoBox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .pic {
+        max-width: 90px;
+      }
+
+      .title {
+        text-align: center;
+        font-size: Rem(24);
+        color: #0c78d2;
+        font-weight: 500;
+        font-family: $NotoSansTC;
+        line-height: 1.4;
+
+        span {
+          display: block;
+          font-size: Rem(30);
+          color: #e70014;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
