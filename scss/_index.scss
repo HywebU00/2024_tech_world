@@ -879,6 +879,11 @@
     position: relative;
     padding-bottom: 390px;
     padding-top: 1px;
+    width: 100%;
+
+    .pin-spacer {
+      width: 100% !important;
+    }
 
     .bg {
       width: 100%;
@@ -1082,6 +1087,7 @@
     }
 
     .bottomBox {
+      width: 100% !important;
       overflow: hidden;
 
       .listBox {

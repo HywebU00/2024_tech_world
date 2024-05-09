@@ -2522,6 +2522,7 @@ footer {
             inset: 0;
             display: block;
             background: #000;
+            opacity: 0.8;
             border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
             animation: arrowRadius 3s infinite linear;
             @include transition(all, 0.3);

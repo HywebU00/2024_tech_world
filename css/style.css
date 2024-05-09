@@ -2518,6 +2518,7 @@ footer .bottomBox .infoBox .copyright {
   inset: 0;
   display: block;
   background: #000;
+  opacity: 0.8;
   border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
   animation: arrowRadius 3s infinite linear;
   transition: all 0.3s ease;
@@ -3725,6 +3726,10 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   padding-bottom: 390px;
   padding-top: 1px;
+  width: 100%;
+}
+.index .activitiesBox .pin-spacer {
+  width: 100% !important;
 }
 .index .activitiesBox .bg {
   width: 100%;
@@ -3913,6 +3918,7 @@ table.tableSprite tr:nth-child(even) {
   overflow: hidden;
 }
 .index .activitiesBox .bottomBox {
+  width: 100% !important;
   overflow: hidden;
 }
 .index .activitiesBox .bottomBox .listBox {
