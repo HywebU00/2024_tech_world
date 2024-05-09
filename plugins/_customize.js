@@ -200,7 +200,11 @@
 
     let loaded = false;
     body.classList.add('onload');
-    video.addEventListener('canplaythrough', function () {
+    video.addEventListener('loadeddata', function () {
+      video.removeAttribute('autoplay');
+      video.currentTime = 0;
+      video.pause();
+
       setTimeout(() => {
         body.classList.remove('onload');
         loading.classList.add('loaded');
@@ -209,6 +213,7 @@
     });
     let checkLoad = setInterval(function () {
       if (video.readyState >= 2) {
+        video.pause();
         body.classList.remove('onload');
         loading.classList.add('loaded');
         loaded = true;
@@ -235,6 +240,7 @@
         requestAnimationFrame(function () {
           if (Math.abs(currentTimeInSeconds - lastVideoTime) > 0.05) {
             video.currentTime = currentTimeInSeconds;
+            video.pause();
             lastVideoTime = currentTimeInSeconds;
           }
         });
