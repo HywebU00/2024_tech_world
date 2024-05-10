@@ -142,6 +142,14 @@
   const videoBoxItem = document.querySelectorAll('.videoBox video');
   if (videoBoxItem) {
     videoBoxItem.forEach((item) => {
+      item.addEventListener('loadeddata', function () {
+        console.log(item);
+        item.removeAttribute('autoplay');
+        item.currentTime = 0;
+        item.pause();
+      });
+    });
+    videoBoxItem.forEach((item) => {
       item.addEventListener('click', () => {
         item.parentNode.classList.toggle('active');
         item.paused ? item.play() : item.pause();
@@ -208,7 +216,7 @@
       setTimeout(() => {
         body.classList.remove('onload');
         loading.classList.add('loaded');
-      }, 1000);
+      }, 3000);
       loaded = true;
     });
     let checkLoad = setInterval(function () {

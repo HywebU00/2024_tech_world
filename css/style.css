@@ -410,6 +410,11 @@ template,
   pointer-events: none;
   z-index: 9;
 }
+@media screen and (max-width: 1023px) {
+  .moreBtn {
+    display: none;
+  }
+}
 .moreBtn .more {
   width: 80px;
   height: 80px;
@@ -3409,6 +3414,10 @@ table.tableSprite tr:nth-child(even) {
     padding: 50px 0;
   }
 }
+.index .newsBox .bg {
+  width: 100%;
+  overflow: hidden;
+}
 .index .newsBox .filtered {
   position: fixed;
   width: 100%;
@@ -3417,6 +3426,7 @@ table.tableSprite tr:nth-child(even) {
   left: 0;
   overflow: hidden;
   transition: all 0.3s ease;
+  transform: scale(1.01);
 }
 .index .newsBox .filtered::before {
   content: "";
@@ -3559,7 +3569,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .index .videoBox {
   position: relative;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%);
 }
 .index .videoBox .listBox {
   max-width: 1100px;
@@ -3574,11 +3584,17 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .videoBox .item {
+  width: calc((100% - 50px) / 2);
   border-radius: 20px;
   overflow: hidden;
   position: relative;
   line-height: 0;
   cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .index .videoBox .item {
+    width: 100%;
+  }
 }
 .index .videoBox .item:hover .arrow polygon {
   animation: arrowMove 1s infinite linear;
@@ -3699,6 +3715,8 @@ table.tableSprite tr:nth-child(even) {
   cursor: pointer;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .index .activitiesTitleBox {
   background: #fff;
@@ -3769,6 +3787,7 @@ table.tableSprite tr:nth-child(even) {
   overflow: hidden;
   z-index: -2;
   transition: all 0.3s ease;
+  transform: scale(1.01);
 }
 .index .activitiesBox .filtered::before {
   content: "";

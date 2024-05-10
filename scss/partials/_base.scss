@@ -9,6 +9,10 @@
   pointer-events: none;
   z-index: 9;
 
+  @include screen('tablet') {
+    display: none;
+  }
+
   .more {
     width: 80px;
     height: 80px;
