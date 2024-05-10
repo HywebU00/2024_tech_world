@@ -188,16 +188,16 @@
       position: relative;
       align-self: stretch;
 
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 0;
-        height: 1px;
-        background: #000;
-        @include transition(all, 0.3);
-      }
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   bottom: 0;
+      //   right: 0;
+      //   width: 0;
+      //   height: 1px;
+      //   background: #000;
+      //   @include transition(all, 0.3);
+      // }
     }
 
     .title {

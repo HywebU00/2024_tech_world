@@ -3982,7 +3982,7 @@ table.tableSprite tr:nth-child(even) {
   padding: 0;
 }
 .index .activitiesBox .bottomBox .listBox .item a:hover .picBox .pic {
-  animation: picHover 0.3s ease-in-out forwards;
+  animation: picHover 0.2s ease-in-out forwards;
 }
 @keyframes picHover {
   0% {
@@ -4122,7 +4122,7 @@ table.tableSprite tr:nth-child(even) {
   opacity: 0;
 }
 .index .trafficBox:hover .picBox .map {
-  animation: mapUse 0.3s linear forwards;
+  animation: mapUse 0.2s linear forwards;
 }
 .index .trafficBox:hover .blockTitle {
   color: #fff;
@@ -4461,16 +4461,6 @@ table.tableSprite tr:nth-child(even) {
   padding-bottom: 20px;
   position: relative;
   align-self: stretch;
-}
-.lp2 .listBox .info::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 1px;
-  background: #000;
-  transition: all 0.3s ease;
 }
 .lp2 .listBox .title {
   font-size: 1.1111111111em;
