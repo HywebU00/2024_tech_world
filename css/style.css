@@ -891,6 +891,10 @@ button:focus {
 .innerPage .mainBox .content.largeSize {
   font-size: 20px;
 }
+.innerPage .filteredBg {
+  width: 100%;
+  overflow: hidden;
+}
 .innerPage .filtered {
   position: fixed;
   width: 100%;

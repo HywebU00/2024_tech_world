@@ -599,6 +599,11 @@ button {
     }
   }
 
+  .filteredBg {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .filtered {
     position: fixed;
     width: 100%;
