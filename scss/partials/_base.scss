@@ -398,6 +398,12 @@ button {
 
   // head
   .siteHeader {
+
+    //20230510
+    .slogan {
+      display: none !important;
+    }
+
     &::before {
       opacity: 0;
     }
@@ -449,10 +455,10 @@ button {
         // }
       }
 
-      .inMenu {
-        top: -5px;
-        bottom: auto;
-      }
+      // .inMenu {
+      //   top: -5px;
+      //   bottom: auto;
+      // }
     }
   }
 
@@ -471,8 +477,12 @@ button {
   .inMenu {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    bottom: -25px;
+
+    //20230510
+    // transform: translateX(-50%);
+    // bottom: -25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     @include screenWidth('1220') {
       display: none;
@@ -673,6 +683,7 @@ button {
       ul {
         display: flex;
         flex: 0 0 6em;
+        gap: 10px;
 
         li {
           font-size: 1em;
@@ -915,16 +926,16 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   white-space: nowrap;
 
   @include screen('tablet') {
     padding-bottom: 0;
   }
 
-  @include screen('mobile') {
-    top: 30%;
-  }
+  // @include screen('mobile') {
+  //   top: 30%;
+  // }
 
   .day {
 
@@ -987,6 +998,7 @@ button {
     background-color: #000;
     transform-origin: 100% 100%;
     bottom: 0;
+    display: none;
 
     @include screen('tablet') {
       height: 1px;
@@ -1378,32 +1390,53 @@ button {
       flex-direction: column;
 
       @include screen('tablet') {
-        gap: 20px;
+        gap: 10px;
       }
 
 
       & > li {
         position: relative;
 
+        &.active,
         &:hover {
-          @include screenWidthMin('1240') {
-            .out {
-              &::before {
-                opacity: 1;
-                width: 100%;
-              }
-
-              a,
-              button {
-                padding-left: 20px;
-                color: #fff;
-
-                // @include screenWidth('1240') {
-                //   color: #000;
-                // }
-              }
+          .out {
+            &::before {
+              opacity: 1;
+              width: 100%;
             }
 
+            a,
+            button {
+              padding-left: 20px;
+              color: #fff;
+
+              // @include screenWidth('1240') {
+              //   color: #000;
+              // }
+            }
+
+            .nextMenuBox ul {
+              @include screen('tablet') {
+                padding-left: 20px;
+              }
+
+              @include screenWidth('550') {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 10px;
+
+                &::before {
+                  margin-bottom: 10px;
+                }
+
+                a {
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+
+          @include screenWidthMin('1240') {
             .nextMenuBox {
               opacity: 1;
               transform: translateX(0);
@@ -1444,7 +1477,7 @@ button {
           }
 
           @include screen('mobile') {
-            padding: 0px;
+            padding: 10px 20px;
           }
 
 
@@ -1462,6 +1495,7 @@ button {
               border-radius: 20px;
             }
           }
+
 
           & > a,
           & > button {
@@ -1578,6 +1612,7 @@ button {
 
           @include screen('mobile') {
             width: 30px;
+            background: #fff;
           }
         }
 
@@ -1733,7 +1768,7 @@ button {
   display: none;
   padding: 20px;
   border: 1px solid #000;
-  border-width: 1px 0;
+  border-width: 2px 0;
 
   @include screen('tablet') {
     display: block;
@@ -1934,8 +1969,11 @@ footer {
         li {
 
           a {
-            width: 60px;
-            height: 60px;
+            //20240510
+            // width: 60px;
+            // height: 60px;
+            width: 48px;
+            height: 48px;
             display: block;
             color: transparent;
             position: relative;
@@ -2145,8 +2183,11 @@ footer {
       li {
 
         a {
-          width: 36px;
-          height: 36px;
+          //20240510
+          // width: 36px;
+          // height: 36px;
+          width: 30px;
+          height: 30px;
           display: block;
           color: transparent;
           position: relative;
@@ -2495,7 +2536,9 @@ footer {
 
       &.active {
         a {
-          color: #e20014;
+          font-size: Rem(18);
+          color: #000;
+          font-weight: 600;
         }
       }
 
@@ -2554,16 +2597,13 @@ footer {
           }
 
           &:hover {
-            &.prev {
-              &::before {
-                background: #e20014;
-              }
+            &::after {
+              filter: invert(0);
             }
 
-            &.next {
-              &::before {
-                background: #0169b8;
-              }
+            &::before {
+              background: #fff;
+              box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1),
             }
           }
 

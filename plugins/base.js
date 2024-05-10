@@ -120,6 +120,8 @@ function sliderDown(elem) {
     })
     .click(function () {
       if (window.innerWidth < 1240) {
+        $(this).parent('li').addClass('active');
+        $(this).parent('li').siblings().removeClass('active');
         $(this).children('.nextMenuBox').removeClass('active');
         $(this).parent('li').siblings().find('.nextMenuBox').slideUp('fast');
         $(this).children('.nextMenuBox').slideToggle('fast');

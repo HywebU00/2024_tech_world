@@ -752,6 +752,9 @@ button:focus {
 .innerPage main {
   position: relative;
 }
+.innerPage .siteHeader .slogan {
+  display: none !important;
+}
 .innerPage .siteHeader::before {
   opacity: 0;
 }
@@ -765,10 +768,6 @@ button:focus {
   .innerPage .siteHeader.headFixIn .slogan {
     display: none;
   }
-}
-.innerPage .siteHeader.headFixIn .inMenu {
-  top: -5px;
-  bottom: auto;
 }
 .innerPage .slogan {
   top: 20%;
@@ -786,8 +785,8 @@ button:focus {
 .innerPage .inMenu {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: -25px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 1220px) {
   .innerPage .inMenu {
@@ -964,6 +963,7 @@ button:focus {
 .innerPage .functionPanel .fontSize ul {
   display: flex;
   flex: 0 0 6em;
+  gap: 10px;
 }
 .innerPage .functionPanel .fontSize ul li {
   font-size: 1em;
@@ -1158,17 +1158,11 @@ button:focus {
   transform: translate(-50%, -50%);
   width: -moz-fit-content;
   width: fit-content;
-  padding-bottom: 10px;
   white-space: nowrap;
 }
 @media screen and (max-width: 1023px) {
   .slogan {
     padding-bottom: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  .slogan {
-    top: 30%;
   }
 }
 .slogan .day .letter {
@@ -1231,6 +1225,7 @@ button:focus {
   background-color: #000;
   transform-origin: 100% 100%;
   bottom: 0;
+  display: none;
 }
 @media screen and (max-width: 1023px) {
   .slogan .line {
@@ -1514,32 +1509,51 @@ button:focus {
 }
 @media screen and (max-width: 1023px) {
   .menuBox .mainMenu > ul {
-    gap: 20px;
+    gap: 10px;
   }
 }
 .menuBox .mainMenu > ul > li {
   position: relative;
 }
-@media screen and (min-width: 1240px) {
-  .menuBox .mainMenu > ul > li:hover .out::before {
-    opacity: 1;
-    width: 100%;
-  }
-  .menuBox .mainMenu > ul > li:hover .out a,
-  .menuBox .mainMenu > ul > li:hover .out button {
+.menuBox .mainMenu > ul > li.active .out::before, .menuBox .mainMenu > ul > li:hover .out::before {
+  opacity: 1;
+  width: 100%;
+}
+.menuBox .mainMenu > ul > li.active .out a,
+.menuBox .mainMenu > ul > li.active .out button, .menuBox .mainMenu > ul > li:hover .out a,
+.menuBox .mainMenu > ul > li:hover .out button {
+  padding-left: 20px;
+  color: #fff;
+}
+@media screen and (max-width: 1023px) {
+  .menuBox .mainMenu > ul > li.active .out .nextMenuBox ul, .menuBox .mainMenu > ul > li:hover .out .nextMenuBox ul {
     padding-left: 20px;
-    color: #fff;
   }
-  .menuBox .mainMenu > ul > li:hover .nextMenuBox {
+}
+@media screen and (max-width: 550px) {
+  .menuBox .mainMenu > ul > li.active .out .nextMenuBox ul, .menuBox .mainMenu > ul > li:hover .out .nextMenuBox ul {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menuBox .mainMenu > ul > li.active .out .nextMenuBox ul::before, .menuBox .mainMenu > ul > li:hover .out .nextMenuBox ul::before {
+    margin-bottom: 10px;
+  }
+  .menuBox .mainMenu > ul > li.active .out .nextMenuBox ul a, .menuBox .mainMenu > ul > li:hover .out .nextMenuBox ul a {
+    padding-left: 0;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .menuBox .mainMenu > ul > li.active .nextMenuBox, .menuBox .mainMenu > ul > li:hover .nextMenuBox {
     opacity: 1;
     transform: translateX(0);
   }
-  .menuBox .mainMenu > ul > li:hover .nextMenuBox ul::before {
+  .menuBox .mainMenu > ul > li.active .nextMenuBox ul::before, .menuBox .mainMenu > ul > li:hover .nextMenuBox ul::before {
     background: #fff;
   }
 }
 @media screen and (min-width: 1240px) and (max-width: 1240px) {
-  .menuBox .mainMenu > ul > li:hover .nextMenuBox ul::before {
+  .menuBox .mainMenu > ul > li.active .nextMenuBox ul::before, .menuBox .mainMenu > ul > li:hover .nextMenuBox ul::before {
     background: #000;
   }
 }
@@ -1569,7 +1583,7 @@ button:focus {
 }
 @media screen and (max-width: 767px) {
   .menuBox .mainMenu > ul > li .out {
-    padding: 0px;
+    padding: 10px 20px;
   }
 }
 .menuBox .mainMenu > ul > li .out::before {
@@ -1716,6 +1730,7 @@ button:focus {
 @media screen and (max-width: 767px) {
   .menuBox .mainMenu .nextMenuBox ul::before {
     width: 30px;
+    background: #fff;
   }
 }
 .menuBox .mainMenu .nextMenuBox a {
@@ -1852,7 +1867,7 @@ button:focus {
   display: none;
   padding: 20px;
   border: 1px solid #000;
-  border-width: 1px 0;
+  border-width: 2px 0;
 }
 @media screen and (max-width: 1023px) {
   .sideMobile {
@@ -2034,8 +2049,8 @@ footer .topBox .shareBox ul {
   }
 }
 footer .topBox .shareBox ul li a {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   display: block;
   color: transparent;
   position: relative;
@@ -2208,8 +2223,8 @@ footer .bottomBox .infoBox .copyright {
   gap: 15px;
 }
 .floatNav .shareBox ul li a {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   display: block;
   color: transparent;
   position: relative;
@@ -2495,7 +2510,9 @@ footer .bottomBox .infoBox .copyright {
   color: #e20014;
 }
 .pageBox .pagination li.active a {
-  color: #e20014;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
 }
 .pageBox .pagination li.controls:last-of-type {
   margin: 0;
@@ -2542,11 +2559,12 @@ footer .bottomBox .infoBox .copyright {
 .pageBox .pagination li.controls a.next::after {
   transform: scaleX(-1);
 }
-.pageBox .pagination li.controls a:hover.prev::before {
-  background: #e20014;
+.pageBox .pagination li.controls a:hover::after {
+  filter: invert(0);
 }
-.pageBox .pagination li.controls a:hover.next::before {
-  background: #0169b8;
+.pageBox .pagination li.controls a:hover::before {
+  background: #fff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
 }
 @keyframes arrowRadius {
   0% {
@@ -3689,7 +3707,7 @@ table.tableSprite tr:nth-child(even) {
   overflow: hidden;
 }
 .index .activitiesTitleBox .blockTitle span {
-  font-size: 19.4444444444rem;
+  font-size: 17.7777777778rem;
   display: block;
   line-height: 0.7;
   background: url("../images/activities_title.jpg") repeat center right;
@@ -3793,10 +3811,10 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .activitiesBox .topBox .container a:hover .title {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .index .activitiesBox .topBox .picBox {
-  max-width: 740px;
+  max-width: 640px;
   border-radius: 20px;
   background: #fff;
   padding-bottom: 50px;
@@ -3824,7 +3842,7 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: -20%;
+  margin-left: -10%;
   margin-bottom: -50px;
 }
 @media screen and (max-width: 767px) {
@@ -3875,7 +3893,7 @@ table.tableSprite tr:nth-child(even) {
   z-index: 9;
 }
 .index .activitiesBox .topBox .infoBox .info .title {
-  font-size: 2rem;
+  font-size: 1.6666666667rem;
   font-weight: 400;
   line-height: 1.6;
   margin: 0 -20% 20px 20%;
@@ -3944,7 +3962,7 @@ table.tableSprite tr:nth-child(even) {
   padding-right: 22vw;
 }
 .index .activitiesBox .bottomBox .listBox .item a {
-  width: 780px;
+  width: 710px;
   position: relative;
   isolation: isolate;
 }
@@ -3965,7 +3983,7 @@ table.tableSprite tr:nth-child(even) {
   transform: translate(0, 0);
 }
 .index .activitiesBox .bottomBox .listBox .item .picBox {
-  width: 600px;
+  width: 540px;
   aspect-ratio: 600/460;
   position: relative;
   background: #fff;
@@ -4295,7 +4313,7 @@ table.tableSprite tr:nth-child(even) {
   opacity: 0;
 }
 .lp .listBox .pic {
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 30px;
   position: relative;
@@ -4394,7 +4412,7 @@ table.tableSprite tr:nth-child(even) {
 .lp2 .listBox .pic {
   width: 100%;
   flex-shrink: 0;
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
@@ -4491,7 +4509,7 @@ table.tableSprite tr:nth-child(even) {
   opacity: 0;
 }
 .lp3 .listBox .pic {
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 30px;
   position: relative;
