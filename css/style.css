@@ -2011,7 +2011,6 @@ footer .topBox .footerMenuBox {
 footer .topBox .footerMenuBox ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   margin-bottom: 30px;
 }
 footer .topBox .footerMenuBox ul li {
@@ -2023,8 +2022,17 @@ footer .topBox .footerMenuBox ul li {
   }
 }
 footer .topBox .footerMenuBox ul li a {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 13px 25px 12px;
   display: block;
   color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+footer .topBox .footerMenuBox ul li a:hover {
+  color: #000;
+  background: #FFF;
 }
 @media screen and (max-width: 1023px) {
   footer .topBox .footerMenuBox ul li a {
@@ -2044,7 +2052,7 @@ footer .topBox .shareBox {
 footer .topBox .shareBox ul {
   display: flex;
   justify-content: flex-end;
-  gap: clamp(20px, 20%, 80px);
+  gap: clamp(20px, 10%, 40px);
 }
 @media screen and (max-width: 1023px) {
   footer .topBox .shareBox ul {
@@ -2052,17 +2060,11 @@ footer .topBox .shareBox ul {
   }
 }
 footer .topBox .shareBox ul li a {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   display: block;
   color: transparent;
   position: relative;
-}
-@media screen and (max-width: 1023px) {
-  footer .topBox .shareBox ul li a {
-    width: 40px;
-    height: 40px;
-  }
 }
 footer .topBox .shareBox ul li a::before {
   content: "";
@@ -2498,7 +2500,7 @@ footer .bottomBox .infoBox .copyright {
   justify-content: center;
   font-weight: 500;
   font-size: 0.8888888889rem;
-  color: #666666;
+  color: #000;
   background: none;
   transition: all 0.3s ease;
 }
@@ -2510,7 +2512,9 @@ footer .bottomBox .infoBox .copyright {
   }
 }
 .pageBox .pagination li a:hover {
-  color: #e20014;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 600;
 }
 .pageBox .pagination li.active a {
   font-size: 1rem;
@@ -3978,7 +3982,7 @@ table.tableSprite tr:nth-child(even) {
   padding: 0;
 }
 .index .activitiesBox .bottomBox .listBox .item a:hover .picBox .pic {
-  animation: picHover 0.7s ease-in-out forwards;
+  animation: picHover 0.3s ease-in-out forwards;
 }
 @keyframes picHover {
   0% {
@@ -4118,7 +4122,7 @@ table.tableSprite tr:nth-child(even) {
   opacity: 0;
 }
 .index .trafficBox:hover .picBox .map {
-  animation: mapUse 0.5s linear forwards;
+  animation: mapUse 0.3s linear forwards;
 }
 .index .trafficBox:hover .blockTitle {
   color: #fff;

@@ -1929,7 +1929,6 @@ footer {
       ul {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
         margin-bottom: 30px;
 
         li {
@@ -1940,8 +1939,17 @@ footer {
           }
 
           a {
+            width: fit-content;
+            padding: 13px 25px 12px;
             display: block;
             color: #fff;
+            @include transition(all, 0.3);
+            border-radius: 50px;
+
+            &:hover {
+              color: #000;
+              background: #FFF;
+            }
 
             @include screen('tablet') {
               text-align: center;
@@ -1963,7 +1971,7 @@ footer {
       ul {
         display: flex;
         justify-content: flex-end;
-        gap: clamp(20px, 20%, 80px);
+        gap: clamp(20px, 10%, 40px);
 
         @include screen('tablet') {
           gap: 25px;
@@ -1975,16 +1983,16 @@ footer {
             //20240510
             // width: 60px;
             // height: 60px;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             display: block;
             color: transparent;
             position: relative;
 
-            @include screen('tablet') {
-              width: 40px;
-              height: 40px;
-            }
+            // @include screen('tablet') {
+            //   width: 40px;
+            //   height: 40px;
+            // }
 
             &::before {
               content: '';
@@ -2522,7 +2530,7 @@ footer {
         justify-content: center;
         font-weight: 500;
         font-size: Rem(16);
-        color: #666666;
+        color: #000;
         background: none;
         @include transition(all, 0.3);
 
@@ -2533,7 +2541,9 @@ footer {
         }
 
         &:hover {
-          color: #e20014;
+          font-size: Rem(18);
+          color: #000;
+          font-weight: 600;
         }
       }
 
