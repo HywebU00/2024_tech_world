@@ -1450,7 +1450,7 @@ button:focus {
 }
 @media screen and (max-width: 1023px) {
   .menuBox {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 }
 .menuBox.active {
@@ -1462,6 +1462,7 @@ button:focus {
   animation: showLi 0.6s ease forwards;
 }
 .menuBox.active .copyright {
+  max-width: 400px;
   animation: showLi 0.6s ease forwards;
   animation-delay: 2s;
 }
@@ -1863,12 +1864,13 @@ button:focus {
 }
 
 .sideMobile {
+  max-width: 360px;
   opacity: 0;
-  margin-top: 40px;
+  margin: 40px 10% 0;
   display: none;
   padding: 20px;
   border: 1px solid #000;
-  border-width: 2px 0;
+  border-width: 3px 0;
 }
 @media screen and (max-width: 1023px) {
   .sideMobile {
@@ -3976,12 +3978,26 @@ table.tableSprite tr:nth-child(even) {
   padding: 0;
 }
 .index .activitiesBox .bottomBox .listBox .item a:hover .picBox .pic {
-  border-radius: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translate(0, 0);
+  animation: picHover 0.7s ease-in-out forwards;
+}
+@keyframes picHover {
+  0% {
+    filter: blur(0);
+  }
+  10% {
+    filter: blur(5px);
+  }
+  80% {
+    filter: blur(5px);
+  }
+  100% {
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 0);
+  }
 }
 .index .activitiesBox .bottomBox .listBox .item .picBox {
   width: 540px;
@@ -4020,7 +4036,7 @@ table.tableSprite tr:nth-child(even) {
   transform: translateY(-50%);
   z-index: 2;
   transform-origin: left center;
-  transition: all 1s ease;
+  transition: all 1s ease-in-out;
 }
 @media screen and (max-width: 767px) {
   .index .activitiesBox .bottomBox .listBox .item .picBox .pic {
@@ -4694,13 +4710,25 @@ table.tableSprite tr:nth-child(even) {
   line-height: 0;
   border-radius: 15px;
   overflow: hidden;
+  position: relative;
+}
+.innerPage .cp .mainBox .cpPicListBox .picBox .item a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 .innerPage .cp .mainBox .cpPicListBox .picBox .item:hover {
   padding: 0 65px 0 45px;
   transform: scale(1.3);
 }
+.innerPage .cp .mainBox .cpPicListBox .picBox .item:hover a::after {
+  opacity: 0;
+}
 .innerPage .cp .mainBox .cpPicListBox .controlBox {
   max-width: 1200px;
+  padding-bottom: 20px;
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
@@ -4785,11 +4813,12 @@ table.tableSprite tr:nth-child(even) {
 .innerPage .cp .mainBox .cpPicListBox .controlBox li button.next::after {
   transform: scaleX(-1);
 }
-.innerPage .cp .mainBox .cpPicListBox .controlBox li button:hover.prev::before {
-  background: #e20014;
+.innerPage .cp .mainBox .cpPicListBox .controlBox li button:hover::after {
+  filter: invert(0);
 }
-.innerPage .cp .mainBox .cpPicListBox .controlBox li button:hover.next::before {
-  background: #0169b8;
+.innerPage .cp .mainBox .cpPicListBox .controlBox li button:hover::before {
+  background: #fff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
 }
 @keyframes arrowRadius {
   0% {
