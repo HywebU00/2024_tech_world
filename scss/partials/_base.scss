@@ -1312,7 +1312,7 @@ button {
 
   &::before {
     border-radius: 40% 60% 39% 61% / 54% 39% 61% 46%;
-    background: url('../images/activities_bg.jpg') center repeat;
+    background: url('../images/menu_bg.jpg') center repeat;
     animation: rotate360 15s infinite linear;
     z-index: -1;
   }
@@ -1348,9 +1348,12 @@ button {
     }
 
     .copyright {
-      max-width: 400px;
       animation: showLi 0.6s ease forwards;
       animation-delay: 2s;
+
+      @include screen('tablet') {
+        max-width: 400px;
+      }
     }
 
     .sideMobile {
