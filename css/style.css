@@ -3319,7 +3319,8 @@ table.tableSprite tr:nth-child(even) {
   inset: 0;
   display: block;
   border-radius: 58% 42% 54% 46%/51% 55% 45% 49%;
-  background: url("../images/activities_bg.jpg") center center no-repeat;
+  background: url("../images/loading.jpg") center center no-repeat;
+  background-size: contain;
   animation: loadingAnimation 3s linear infinite;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 -5px 5px 0 rgba(255, 255, 255, 0.6) inset;
 }
