@@ -823,10 +823,10 @@ button:focus {
   left: 50%;
   transform: translateX(calc(-50% + 10px));
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
-  padding: 10px;
   border-radius: 10px;
-  background: white;
+  background: black;
   opacity: 0;
+  overflow: hidden;
   pointer-events: none;
   transition: all 0.3s ease;
 }
@@ -837,21 +837,22 @@ button:focus {
 }
 .innerPage .inMenu .nextMenuBox ul {
   flex-direction: column;
-  padding: 0;
+  padding: 15px 0;
 }
 .innerPage .inMenu .nextMenuBox li {
   width: 100%;
-  padding: 0 10px;
+  padding: 0;
 }
 .innerPage .inMenu .nextMenuBox a {
+  color: #fff;
   display: block;
   text-align: center;
-  padding: 5px;
+  padding: 5px 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 .innerPage .inMenu .nextMenuBox a:hover {
-  color: #e20014;
+  opacity: 0.7;
 }
 .innerPage .container {
   max-width: 1410px;
