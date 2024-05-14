@@ -177,46 +177,12 @@
   const loading = document.querySelector('.loading');
   const videoLink = videoBox.dataset.video;
 
-  new ScrollyVideo({
-    scrollyVideoContainer: 'scrolly-video',
-    src: videoLink,
-    onReady: () => {
-      body.classList.remove('onload');
-      loading.classList.add('loaded');
-    },
-  });
-
-  // bannerUse
-
-  if (loading) {
-    const loadingText = document.querySelector('.loading .text');
-    loadingText.innerHTML = loadingText.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-    anime
-      .timeline({ loop: true })
-      .add({
-        targets: '.loading .letter',
-        translateX: [40, 0],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: 'easeOutExpo',
-        duration: 1200,
-        delay: (el, i) => 500 + 30 * i,
-      })
-      .add({
-        targets: '.loading .letter',
-        translateX: [0, -30],
-        opacity: [1, 0],
-        easing: 'easeInExpo',
-        duration: 1100,
-        delay: (el, i) => 100 + 30 * i,
-      });
-  }
+  let loaded = false;
 
   if (videoBox) {
-    let totalHeight = videoBox.offsetHeight;
+    body.classList.add('onload');
 
-    let loaded = false;
+    // let loaded = false;
     // body.classList.add('onload');
     // video.addEventListener('loadeddata', function () {
     //   video.removeAttribute('autoplay');
@@ -292,6 +258,41 @@
 
     //   requestAnimationFrame(animation);
     // }
+    new ScrollyVideo({
+      scrollyVideoContainer: 'scrolly-video',
+      src: videoLink,
+      onReady: () => {
+        body.classList.remove('onload');
+        loading.classList.add('loaded');
+        loaded = true;
+      },
+    });
+  }
+  // bannerUse
+
+  if (loading) {
+    const loadingText = document.querySelector('.loading .text');
+    loadingText.innerHTML = loadingText.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime
+      .timeline({ loop: true })
+      .add({
+        targets: '.loading .letter',
+        translateX: [40, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 1200,
+        delay: (el, i) => 500 + 30 * i,
+      })
+      .add({
+        targets: '.loading .letter',
+        translateX: [0, -30],
+        opacity: [1, 0],
+        easing: 'easeInExpo',
+        duration: 1100,
+        delay: (el, i) => 100 + 30 * i,
+      });
   }
 
   $('.innerPage .functionPanel .share .shareButton').on('click', function () {
