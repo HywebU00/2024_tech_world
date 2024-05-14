@@ -143,11 +143,8 @@
       </header>
       <!-- header end -->
       <main>
-        <section class="bannerBox">
-          <video class="video" muted playsinline autoplay>
-            <source src="video.mp4" type="video/mp4" />
-            <!-- <source src="test.mp4" type="video/mp4" /> -->
-          </video>
+        <section class="bannerBox" data-video="video.mp4">
+          <div id="scrolly-video"></div>
         </section>
         <div class="mainBox">
           <div class="floatNav">
@@ -447,15 +444,9 @@
     <script src="plugins/gsap.min.js"></script>
     <script src="plugins/ScrollTrigger.min.js"></script>
     <script src="plugins/anime.min.js"></script>
-    <script src="plugins/scrolleo.js"></script>
+    <script src="plugins/scrolly-video.js"></script>
     <!-- <script src="plugins/shine/shine.min.js"></script> -->
     <script src="plugins/base.js"></script>
     <script src="plugins/customize.js"></script>
-
-    <script>
-      $('.index .activitiesBox .bottomBox .listBox .item a').on('mouseenter', function () {
-        $(this);
-      });
-    </script>
   </body>
 </html>
