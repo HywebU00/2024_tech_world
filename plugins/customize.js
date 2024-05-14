@@ -216,7 +216,7 @@
       setTimeout(() => {
         body.classList.remove('onload');
         loading.classList.add('loaded');
-      }, 3000);
+      }, 5000);
       loaded = true;
     });
     let checkLoad = setInterval(function () {
@@ -226,7 +226,7 @@
         loading.classList.add('loaded');
         loaded = true;
       }
-    }, 3000);
+    }, 5000);
 
     const totalFrames = totalHeight - window.innerHeight;
     let lastScrollTime = 0;

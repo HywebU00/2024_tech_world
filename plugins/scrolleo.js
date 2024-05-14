@@ -153,6 +153,6 @@ var scrolleo1 = new Scrolleo({
   acceleration: 0.08, // 1 = instant, 0 = never
   secondsPerScreen: 6, // Defaults to video duration
   additionalOffset: 0, // Negative starts the video later, positive starts earlier. default starts when top of video hits bottom of the screen
-  wrapperEl: '#scrolleo-1', // id of the video you want to control
+  wrapperEl: '#scrolleo', // id of the video you want to control
 });
 scrolleo1.init();
