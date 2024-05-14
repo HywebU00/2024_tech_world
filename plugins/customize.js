@@ -261,12 +261,23 @@
     new ScrollyVideo({
       scrollyVideoContainer: 'scrolly-video',
       src: videoLink,
-      onReady: () => {
+      // onReady: () => {
+      //   body.classList.remove('onload');
+      //   loading.classList.add('loaded');
+      //   loaded = true;
+      // },
+    });
+
+    const video = document.querySelector('.bannerBox video');
+
+    let checkLoad = setInterval(function () {
+      if (video.readyState >= 2) {
+        video.pause();
         body.classList.remove('onload');
         loading.classList.add('loaded');
         loaded = true;
-      },
-    });
+      }
+    }, 5000);
   }
   // bannerUse
 
