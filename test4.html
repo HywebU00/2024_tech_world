@@ -5,54 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      HTML CSS BabelResult Skip Results Iframe EDIT ON * {
-        background: black;
-        color: white;
+      html,
+      body {
+        padding: 0;
+        margin: 0;
       }
-
-      .hyperboards-container {
-        width: 100%;
-        height: 100%;
-      }
-
-      .main-text-div {
-        display: flex;
-        justify-content: flex-end;
-        width: 100%;
-      }
-
-      .section-title {
-        font-weight: 700;
-        font-size: 90px;
-      }
-
-      .grid-cols-12 {
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
-        gap: 1rem;
-      }
-
-      .video-col {
-        aspect-ratio: 16 / 9 !important;
-        width: 100%;
-        grid-column-start: 2;
-        grid-column: span 7 / span 7;
-      }
-
-      video {
-        width: 100%;
-        height: 100%;
-        obejct-fit: contain;
-      }
-
-      .section-text {
-        grid-column: span 4 / span 4;
-      }
-
-      .other-sections {
+      .load {
+        overflow: hidden;
         height: 100vh;
-        width: 100%;
-        background: grey;
+        height: 100dvh;
+      }
+      video {
+        max-width: 100%;
       }
     </style>
   </head>
@@ -60,34 +24,33 @@
     <div class="hyperboards-container" ref="{IntroVideoRef}">
       <div class="grid-cols-12">
         <div class="w-full col-span-7 col-start-2 video-col">
-          <video muted playsinline autoplay paused class="object-contain w-full h-full">
+          <video muted autoplay playsinline paused class="object-contain w-full h-full">
             <source src="video.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
     </div>
-
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div class="loading"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.production.min.js"></script>
     <script>
       gsap.registerPlugin(ScrollTrigger);
 
-      let ctx = gsap.context(() => {
-        let videoEl = document.querySelector('video'),
-          forcePause = () => {
-            videoEl.removeAttribute('autoplay');
-            videoEl.currentTime = 0;
-            videoEl.pause();
-          };
+      gsap.context(() => {
+        let videoEl = document.querySelector('video');
+        let forcePause = () => {
+          videoEl.removeAttribute('autoplay');
+          videoEl.currentTime = 0;
+          videoEl.pause();
 
-        videoEl.addEventListener('loadeddata', forcePause);
+          setTimeout(() => {
+            alert('loaded');
+          }, 5000);
+        };
+        videoEl.addEventListener('loadeddata', forcePause());
 
         ScrollTrigger.create({
           trigger: 'video',
-          // start: 'center center',
           pin: true,
           scrub: true,
           start: '0',
@@ -108,69 +71,6 @@
 
         return () => videoEl.removeEventListener('loadeddata', forcePause); // cleanup context
       });
-    </script>
-    <script type="text/babel">
-      const { useLayoutEffect, useRef, useState } = React;
-
-      function App() {
-        const IntroVideoRef = useRef(null);
-        const videoRef = useRef(null);
-
-        useLayoutEffect(() => {
-          gsap.registerPlugin(ScrollTrigger);
-
-          let ctx = gsap.context(() => {
-            let videoEl = videoRef.current,
-              forcePause = () => {
-                videoEl.removeAttribute('autoplay');
-                videoEl.currentTime = 0;
-                videoEl.pause();
-              };
-
-            videoEl.addEventListener('loadeddata', forcePause);
-
-            ScrollTrigger.create({
-              trigger: IntroVideoRef.current,
-              scrub: true,
-              pin: IntroVideoRef.current,
-              start: '0',
-              end: '+=10000',
-              markers: true,
-              onUpdate: function (self) {
-                if (videoEl) {
-                  const scrollPos = self.progress;
-                  const videoDuration = videoEl.duration;
-                  const videoCurrentTime = videoDuration * scrollPos;
-                  if (videoCurrentTime) {
-                    videoEl.currentTime = videoCurrentTime;
-                    console.log(videoCurrentTime, scrollPos);
-                  }
-                }
-              },
-            });
-
-            return () => videoEl.removeEventListener('loadeddata', forcePause); // cleanup context
-          });
-
-          return () => ctx.revert(); // cleanup useLayoutEffect()
-        }, [IntroVideoRef, videoRef]);
-
-        return (
-          <>
-            <div className='hyperboards-container' ref={IntroVideoRef}>
-              <div className='grid-cols-12'>
-                <div className='w-full col-span-7 col-start-2 video-col'>
-                  <video ref={videoRef} muted playsInline autoPlay paused className='object-contain w-full h-full'>
-                    <source src='video.mp4' type='video/mp4' />
-                  </video>
-                </div>
-              </div>
-            </div>
-          </>
-        );
-      }
-
-      ReactDOM.render(<App />, document.querySelector('#app'));
     </script>
   </body>
 </html>
