@@ -277,7 +277,7 @@
         loading.classList.add('loaded');
         loaded = true;
       }
-    }, 5000);
+    }, 3000);
   }
   // bannerUse
 
