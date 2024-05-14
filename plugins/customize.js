@@ -228,32 +228,32 @@
       }
     }, 5000);
 
-    const totalFrames = totalHeight - window.innerHeight;
-    let lastScrollTime = 0;
-    let lastVideoTime = 0;
+    // const totalFrames = totalHeight - window.innerHeight;
+    // let lastScrollTime = 0;
+    // let lastVideoTime = 0;
 
-    window.addEventListener('scroll', function () {
-      if (loaded) {
-        clearInterval(checkLoad);
-        const currentTime = performance.now();
-        if (currentTime - lastScrollTime < 50) {
-          return;
-        }
-        lastScrollTime = currentTime;
+    // window.addEventListener('scroll', function () {
+    //   if (loaded) {
+    //     clearInterval(checkLoad);
+    //     const currentTime = performance.now();
+    //     if (currentTime - lastScrollTime < 50) {
+    //       return;
+    //     }
+    //     lastScrollTime = currentTime;
 
-        const scrollY = window.scrollY;
+    //     const scrollY = window.scrollY;
 
-        const currentTimeInSeconds = (scrollY / totalFrames) * video.duration;
+    //     const currentTimeInSeconds = (scrollY / totalFrames) * video.duration;
 
-        requestAnimationFrame(function () {
-          if (Math.abs(currentTimeInSeconds - lastVideoTime) > 0.05) {
-            video.currentTime = currentTimeInSeconds;
-            video.pause();
-            lastVideoTime = currentTimeInSeconds;
-          }
-        });
-      }
-    });
+    //     requestAnimationFrame(function () {
+    //       if (Math.abs(currentTimeInSeconds - lastVideoTime) > 0.05) {
+    //         video.currentTime = currentTimeInSeconds;
+    //         video.pause();
+    //         lastVideoTime = currentTimeInSeconds;
+    //       }
+    //     });
+    //   }
+    // });
     // video.load();
 
     // let check = 0;
