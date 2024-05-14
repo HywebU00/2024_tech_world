@@ -21,5 +21,14 @@
       </video>
     </div>
     <script src="test.js"></script>
+
+    <script>
+      const body = document.querySelector('body');
+      const video = document.getElementById('scrolleo-1');
+      body.classList.add('onload');
+      video.addEventListener('loadeddata', function () {
+        alert('loaded');
+      });
+    </script>
   </body>
 </html>
