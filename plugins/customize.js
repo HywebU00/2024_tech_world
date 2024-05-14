@@ -1,5 +1,5 @@
 (function () {
-  'use strict';
+  ('use strict');
   const body = document.querySelector('body');
   const siteHeader = document.querySelector('.siteHeader');
   const siteHeaderIn = document.querySelector('.innerPage .siteHeader');
@@ -174,6 +174,7 @@
   }
 
   const videoBox = document.querySelector('.bannerBox');
+  const loading = document.querySelector('.loading');
   const videoLink = videoBox.dataset.video;
 
   new ScrollyVideo({
@@ -186,7 +187,6 @@
   });
 
   // bannerUse
-  const loading = document.querySelector('.loading');
 
   if (loading) {
     const loadingText = document.querySelector('.loading .text');
