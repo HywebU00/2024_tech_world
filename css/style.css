@@ -3410,6 +3410,9 @@ table.tableSprite tr:nth-child(even) {
      object-fit: cover;
   top: 0;
 }
+.index .filtered {
+  display: none;
+}
 .index .newsBox {
   padding: 8% 0 6%;
   min-height: 100vh;
