@@ -177,8 +177,6 @@
   const loading = document.querySelector('.loading');
   const videoLink = videoBox.dataset.video;
 
-  let loaded = false;
-
   if (videoBox) {
     body.classList.add('onload');
 
@@ -258,26 +256,22 @@
 
     //   requestAnimationFrame(animation);
     // }
+
     new ScrollyVideo({
       scrollyVideoContainer: 'scrolly-video',
       src: videoLink,
-      // onReady: () => {
-      //   body.classList.remove('onload');
-      //   loading.classList.add('loaded');
-      //   loaded = true;
-      // },
     });
 
     const video = document.querySelector('.bannerBox video');
 
     let checkLoad = setInterval(function () {
       if (video.readyState >= 2) {
-        video.pause();
         body.classList.remove('onload');
         loading.classList.add('loaded');
-        loaded = true;
+
+        clearInterval(checkLoad);
       }
-    }, 3000);
+    }, 2000);
   }
   // bannerUse
 

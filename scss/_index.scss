@@ -140,10 +140,10 @@
     }
   }
 
-
-  video {
-    width: 100%;
-  }
+  // #scrolly-video,
+  // video {
+  //   width: 100% !important;
+  // }
 
   .bannerBox {
     width: 100%;
@@ -552,7 +552,6 @@
         }
 
         video {
-          height: 100%;
           aspect-ratio: 4/3;
           cursor: pointer;
           object-fit: cover;
