@@ -142,10 +142,11 @@
     }
   }
 
-  // #scrolly-video,
-  // video {
-  //   width: 100% !important;
-  // }
+  #scrolly-video {
+    video {
+      width: 100% !important;
+    }
+  }
 
   .bannerBox {
     width: 100%;
