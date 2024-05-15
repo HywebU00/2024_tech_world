@@ -616,18 +616,18 @@ button {
       position: absolute;
       inset: 0px;
       background-size: cover;
-      // filter: url("#turbulence");
-      transform: scale(1.1);
-
-      @include screen('mobile') {
-        filter: none !important;
-      }
     }
 
     &.top {
 
       &::before {
         background: url("../images/in_bg.jpg") no-repeat top left;
+        transform: scale(1.01);
+        filter: url("#turbulence");
+
+        @include screen('mobile') {
+          filter: none !important;
+        }
       }
 
       &::after {

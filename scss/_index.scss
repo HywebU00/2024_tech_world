@@ -103,6 +103,7 @@
     right: 0;
     margin: 0 0 0 auto;
     transform: translateY(-50%);
+    overflow: hidden;
   }
 
   .siteHeader {
@@ -653,7 +654,7 @@
         background-size: cover;
         background-attachment: fixed;
         transform: translateX(-20px);
-        // filter: url("#turbulence");
+        filter: url("#turbulence");
 
         @include screen('mobile') {
           filter: none !important;

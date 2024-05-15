@@ -907,15 +907,16 @@ button:focus {
   position: absolute;
   inset: 0px;
   background-size: cover;
-  transform: scale(1.1);
-}
-@media screen and (max-width: 767px) {
-  .innerPage .filtered::before {
-    filter: none !important;
-  }
 }
 .innerPage .filtered.top::before {
   background: url("../images/in_bg.jpg") no-repeat top left;
+  transform: scale(1.01);
+  filter: url("#turbulence");
+}
+@media screen and (max-width: 767px) {
+  .innerPage .filtered.top::before {
+    filter: none !important;
+  }
 }
 .innerPage .filtered.top::after {
   content: "";
@@ -3367,6 +3368,7 @@ table.tableSprite tr:nth-child(even) {
   right: 0;
   margin: 0 0 0 auto;
   transform: translateY(-50%);
+  overflow: hidden;
 }
 .index .siteHeader {
   transition: all 0.3s ease;
@@ -3796,6 +3798,7 @@ table.tableSprite tr:nth-child(even) {
   background-size: cover;
   background-attachment: fixed;
   transform: translateX(-20px);
+  filter: url("#turbulence");
 }
 @media screen and (max-width: 767px) {
   .index .activitiesBox .filtered::before {
