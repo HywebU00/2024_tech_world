@@ -4,33 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <style>
-      html,
-      body {
-        padding: 0;
-        margin: 0;
+      .boxTest {
+        display: flex;
+        height: 300px;
+        padding: 30px 0 0;
       }
-      .box {
-        height: 1000vh;
+      .boxTest .item {
+        width: calc(100% / 3);
+        display: flex;
+        flex-direction: column;
       }
-      video {
-        max-width: 100%;
-        position: fixed;
-        top: 0;
+
+      .boxTest .item:nth-child(2) .line {
+        background: blue;
+      }
+
+      .boxTest .item:nth-child(3) .line {
+        background: green;
+      }
+      .boxTest .num {
+        height: 20px;
+      }
+      .boxTest .lineBox {
+        flex-grow: 1;
+        order: -1;
+        display: flex;
+        align-items: flex-end;
+      }
+      .boxTest .line {
+        width: 100%;
+        position: relative;
+        background: red;
+      }
+      .boxTest span {
+        position: absolute;
+        bottom: calc(100% + 5px);
       }
     </style>
   </head>
   <body>
-    <div class="box">
-      <div id="scrolly-video"></div>
+    <div class="boxTest">
+      <div class="item">
+        <div class="num">< 35</div>
+        <div class="lineBox">
+          <div class="line" style="height: 40%">
+            <span>40%</span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">35-54</div>
+        <div class="lineBox">
+          <div class="line" style="height: 53%">
+            <span>53%</span>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">>55</div>
+        <div class="lineBox">
+          <div class="line" style="height: 7%">
+            <span>7%</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="plugins/scrolly-video.js"></script>
-
-    <script>
-      new ScrollyVideo({
-        scrollyVideoContainer: 'scrolly-video',
-        src: 'video.mp4',
-      });
-    </script>
   </body>
 </html>

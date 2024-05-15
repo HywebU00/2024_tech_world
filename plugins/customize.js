@@ -174,10 +174,10 @@
   }
 
   const videoBox = document.querySelector('.bannerBox');
-  const loading = document.querySelector('.loading');
-  const videoLink = videoBox.dataset.video;
-
   if (videoBox) {
+    const loading = document.querySelector('.loading');
+    const videoLink = videoBox.dataset.video;
+
     body.classList.add('onload');
 
     // let loaded = false;
