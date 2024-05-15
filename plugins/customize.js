@@ -268,10 +268,9 @@
       if (video.readyState >= 2) {
         body.classList.remove('onload');
         loading.classList.add('loaded');
-
         clearInterval(checkLoad);
       }
-    }, 2000);
+    }, 4000);
   }
   // bannerUse
 
