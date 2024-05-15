@@ -907,7 +907,6 @@ button:focus {
   position: absolute;
   inset: 0px;
   background-size: cover;
-  filter: url("#turbulence");
   transform: scale(1.1);
 }
 @media screen and (max-width: 767px) {
@@ -3431,7 +3430,6 @@ table.tableSprite tr:nth-child(even) {
   inset: 0;
   background: #fff url("../images/news_bg.jpg") no-repeat center center;
   background-size: cover;
-  filter: url("#turbulence");
   transform: scale(1.1);
 }
 @media screen and (max-width: 767px) {
@@ -3793,7 +3791,6 @@ table.tableSprite tr:nth-child(even) {
   background-size: cover;
   background-attachment: fixed;
   transform: translateX(-20px);
-  filter: url("#turbulence");
 }
 @media screen and (max-width: 767px) {
   .index .activitiesBox .filtered::before {

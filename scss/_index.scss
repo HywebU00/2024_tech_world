@@ -214,7 +214,7 @@
         inset: 0;
         background: #fff url("../images/news_bg.jpg") no-repeat center center;
         background-size: cover;
-        filter: url("#turbulence");
+        // filter: url("#turbulence");
         transform: scale(1.1);
 
         @include screen('mobile') {
@@ -650,7 +650,7 @@
         background-size: cover;
         background-attachment: fixed;
         transform: translateX(-20px);
-        filter: url("#turbulence");
+        // filter: url("#turbulence");
 
         @include screen('mobile') {
           filter: none !important;
