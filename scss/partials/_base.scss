@@ -584,6 +584,7 @@ button {
       font-weight: 400;
       text-align: center;
       margin-bottom: 60px;
+      @include transition(all, 0.3);
     }
 
     .content {

@@ -881,6 +881,7 @@ button:focus {
   font-weight: 400;
   text-align: center;
   margin-bottom: 60px;
+  transition: all 0.3s ease;
 }
 .innerPage .mainBox .content {
   font-size: 18px;
@@ -3404,6 +3405,43 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   z-index: 9;
 }
+.index .bannerBox .scrollDown {
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 90vh;
+  left: 0;
+  margin-bottom: 30px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+.index .bannerBox .scrollDown::before {
+  content: "";
+  width: 21px;
+  height: 34px;
+  flex-shrink: 0;
+  background: url("../images/icon/icon_mouse.svg") no-repeat;
+  display: block;
+  margin: 0 10px;
+  animation: upDown 1.5s infinite;
+}
+.index .bannerBox .scrollDown::after {
+  content: "Scroll Down";
+  font-size: 16px;
+  font-weight: bold;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
 .index .newsBox {
   padding: 8% 0 6%;
   min-height: 100vh;
@@ -3964,7 +4002,88 @@ table.tableSprite tr:nth-child(even) {
 }
 .index .activitiesBox .bottomBox {
   width: 100% !important;
-  overflow: hidden;
+  position: relative;
+}
+.index .activitiesBox .bottomBox .controlBox {
+  margin: 0 auto;
+  position: absolute;
+  top: calc(100% + 30px);
+  right: 20px;
+  height: 1px;
+  display: flex;
+  justify-content: flex-end;
+}
+.index .activitiesBox .bottomBox .controlBox button {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 0.8333333333rem;
+  width: 75px;
+  height: 74px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 1023px) {
+  .index .activitiesBox .bottomBox .controlBox button {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8888888889rem;
+  }
+}
+.index .activitiesBox .bottomBox .controlBox button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: #000;
+  border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
+  animation: arrowRadius 3s infinite linear;
+  transition: all 0.3s ease;
+}
+.index .activitiesBox .bottomBox .controlBox button::after {
+  content: "";
+  width: 12px;
+  height: 8px;
+  display: block;
+  transition: all 0.3s ease;
+  background: url("../images/icon/icon_arrow_.svg") 0 0 no-repeat;
+  filter: invert(1);
+}
+.index .activitiesBox .bottomBox .controlBox button.prev {
+  margin-left: 20px;
+}
+.index .activitiesBox .bottomBox .controlBox button.prev::before {
+  animation-direction: reverse;
+  animation-duration: 6s;
+}
+.index .activitiesBox .bottomBox .controlBox button.next::after {
+  transform: scaleX(-1);
+}
+.index .activitiesBox .bottomBox .controlBox button:hover::after {
+  filter: invert(0);
+}
+.index .activitiesBox .bottomBox .controlBox button:hover::before {
+  background: #fff;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+@keyframes arrowRadius {
+  0% {
+    border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
+  }
+  25% {
+    border-radius: 56% 44% 31% 69%/67% 52% 48% 33%;
+  }
+  50% {
+    border-radius: 56% 44% 45% 55%/37% 72% 28% 63%;
+  }
+  100% {
+    border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
+  }
 }
 .index .activitiesBox .bottomBox .listBox {
   display: flex;
@@ -4491,6 +4610,7 @@ table.tableSprite tr:nth-child(even) {
   -webkit-box-orient: vertical;
   margin: 0px;
   color: #0b0b0b;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 767px) {
   .lp2 .listBox .title {
@@ -4505,6 +4625,7 @@ table.tableSprite tr:nth-child(even) {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  transition: all 0.3s ease;
 }
 
 .lp3 .listBox {
@@ -4667,6 +4788,13 @@ table.tableSprite tr:nth-child(even) {
 }
 .innerPage .cp .mainBox .pageTitle {
   text-align: left;
+}
+.innerPage .cp .mainBox time {
+  font-size: em(20);
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 10px;
 }
 .innerPage .cp .mainBox .mediaBox {
   border-radius: 15px;
@@ -4880,17 +5008,17 @@ table.tableSprite tr:nth-child(even) {
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  font-size: 1.5555555556rem;
+  font-size: 1.5555555556em;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1023px) {
   .qa .qaListBox .qBox {
-    font-size: 1.3333333333rem;
+    font-size: 1.3333333333em;
   }
 }
 @media screen and (max-width: 767px) {
   .qa .qaListBox .qBox {
-    font-size: 1.1111111111rem;
+    font-size: 1.1111111111em;
     height: 80px;
   }
 }
@@ -4913,7 +5041,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .qa .qaListBox .aBox {
   padding: 50px 7%;
-  font-size: 1.1111111111rem;
+  font-size: 1.1111111111em;
   display: none;
   color: #3b3939;
   color: #3b3939;
@@ -4936,7 +5064,7 @@ table.tableSprite tr:nth-child(even) {
   display: flex;
   padding: 15px 30px 13px;
   text-align: center;
-  font-size: 1.1111111111rem;
+  font-size: 1.1111111111em;
   border-radius: 50px;
   border: 1px solid #7f7f7f;
   color: #3b393a;
@@ -4976,7 +5104,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .qa .expoLogo .infoBox .title {
   text-align: center;
-  font-size: 1.3333333333rem;
+  font-size: 1.3333333333em;
   color: #0c78d2;
   font-weight: 500;
   font-family: "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif;
@@ -4984,7 +5112,7 @@ table.tableSprite tr:nth-child(even) {
 }
 .qa .expoLogo .infoBox .title span {
   display: block;
-  font-size: 1.6666666667rem;
+  font-size: 1.6666666667em;
   color: #e70014;
   white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */

@@ -37,15 +37,15 @@
       text-align: left;
       backdrop-filter: blur(4px);
       box-shadow: 0 0 20px 0 rgba(#000, 0.1);
-      font-size: Rem(28);
+      font-size: Em(28);
       @include transition(all, 0.3);
 
       @include screen('tablet') {
-        font-size: Rem(24);
+        font-size: Em(24);
       }
 
       @include screen('mobile') {
-        font-size: Rem(20);
+        font-size: Em(20);
         height: 80px;
       }
 
@@ -69,7 +69,7 @@
 
     .aBox {
       padding: 50px 7%;
-      font-size: Rem(20);
+      font-size: Em(20);
       display: none;
       color: #3b3939;
       color: #3b3939;
@@ -95,7 +95,7 @@
         display: flex;
         padding: 15px 30px 13px;
         text-align: center;
-        font-size: Rem(20);
+        font-size: Em(20);
         border-radius: 50px;
         border: 1px solid #7f7f7f;
         color: #3b393a;
@@ -142,7 +142,7 @@
 
       .title {
         text-align: center;
-        font-size: Rem(24);
+        font-size: Em(24);
         color: #0c78d2;
         font-weight: 500;
         font-family: $NotoSansTC;
@@ -150,7 +150,7 @@
 
         span {
           display: block;
-          font-size: Rem(30);
+          font-size: Em(30);
           color: #e70014;
           white-space: nowrap;
         }

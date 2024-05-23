@@ -11,6 +11,14 @@
     text-align: left;
   }
 
+  time {
+    font-size: em(20);
+    display: block;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 10px;
+  }
+
   .mediaBox {
     border-radius: 15px;
     overflow: hidden;

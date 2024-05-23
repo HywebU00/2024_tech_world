@@ -164,6 +164,50 @@
     //   object-fit: cover;
     //   top: 0;
     // }
+
+
+    .scrollDown {
+      color: #fff;
+      position: fixed;
+      width: 100%;
+      top: 90vh;
+      left: 0;
+      margin-bottom: 30px;
+      white-space: nowrap;
+      display: flex;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        width: 21px;
+        height: 34px;
+        flex-shrink: 0;
+        background: url('../images/icon/icon_mouse.svg') no-repeat;
+        display: block;
+        margin: 0 10px;
+        animation: upDown 1.5s infinite;
+      }
+
+      &::after {
+        content: 'Scroll Down';
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    @keyframes upDown {
+      0% {
+        transform: translateY(-5px);
+      }
+
+      50% {
+        transform: translateY(5px);
+      }
+
+      100% {
+        transform: translateY(-5px);
+      }
+    }
   }
 
   // .filtered {
@@ -626,6 +670,7 @@
     padding-top: 1px;
     width: 100%;
 
+
     .pin-spacer {
       width: 100% !important;
     }
@@ -834,7 +879,104 @@
 
     .bottomBox {
       width: 100% !important;
-      overflow: hidden;
+      position: relative;
+
+      .controlBox {
+        margin: 0 auto;
+        position: absolute;
+        top: calc(100% + 30px);
+        right: 20px;
+        height: 1px;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+          width: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: Rem(15);
+          width: 75px;
+          height: 74px;
+          font-weight: 500;
+          border: none;
+          background: none;
+          margin: 0 10px;
+          @include transition(all, 0.3);
+
+          @include screen('tablet') {
+            width: 40px;
+            height: 40px;
+            font-size: Rem(16);
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            display: block;
+            background: #000;
+            border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            animation: arrowRadius 3s infinite linear;
+            @include transition(all, 0.3);
+          }
+
+          &::after {
+            content: '';
+            width: 12px;
+            height: 8px;
+            display: block;
+            @include transition(all, 0.3);
+            background: url('../images/icon/icon_arrow_.svg') 0 0 no-repeat;
+            filter: invert(1);
+          }
+
+          &.prev {
+            margin-left: 20px;
+
+            &::before {
+              animation-direction: reverse;
+              animation-duration: 6s;
+            }
+          }
+
+          &.next {
+            &::after {
+              transform: scaleX(-1);
+            }
+          }
+
+          &:hover {
+            &::after {
+              filter: invert(0);
+            }
+
+            &::before {
+              background: #fff;
+              box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1),
+            }
+          }
+
+          @keyframes arrowRadius {
+            0% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            }
+
+            25% {
+              border-radius: 56% 44% 31% 69% / 67% 52% 48% 33%;
+            }
+
+            50% {
+              border-radius: 56% 44% 45% 55% / 37% 72% 28% 63%;
+            }
+
+            100% {
+              border-radius: 45% 55% 60% 40% / 51% 30% 70% 49%;
+            }
+          }
+        }
+      }
 
       .listBox {
         display: flex;
