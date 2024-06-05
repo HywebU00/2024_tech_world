@@ -488,6 +488,32 @@
   if (document.querySelector('#circle')) {
     circle('#circle', path1, 2, path2, 2, path3, 2, path4, 3, path5, 2);
   }
+
+  if (document.querySelector('.cp2 .block03 .listBox')) {
+    //blockScrollLeft
+    const items = document.querySelector('.cp2 .block03 .listBox');
+    let maxWidth = items.offsetWidth;
+
+    window.addEventListener('resize', () => {
+      maxWidth = items.offsetWidth;
+      ScrollTrigger.refresh();
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(items, {
+      x: () => `-${maxWidth - window.innerWidth}`,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.cp2 .block03 .outer',
+        start: 'center center',
+        pin: true,
+        scrub: true,
+        end: `+=${maxWidth}`,
+        invalidateOnRefresh: true,
+      },
+    });
+  }
 })();
 
 function sliderUse(elem) {
