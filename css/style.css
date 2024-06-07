@@ -5419,7 +5419,7 @@ table.tableSprite tr:nth-child(even) {
   font-size: clamp(1em, 3vw, 1.3333333333em);
 }
 .innerPage .cp2 .mainBox .bottomBox {
-  background: url("../images/cp_bg2.jpg") top left no-repeat, url("../images/cp_bg3.png") 0 35% no-repeat, url("../images/cp_bg2.jpg") 0 68% no-repeat;
+  background: url("../images/cp_bg2.jpg") top left no-repeat, url("../images/cp_bg3.png") right 35% no-repeat, url("../images/cp_bg2.jpg") 0 68% no-repeat;
   padding: 20% 0 10%;
 }
 .innerPage .cp2 .mainBox .bottomBox .container {
