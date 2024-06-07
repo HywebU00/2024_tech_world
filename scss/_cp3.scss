@@ -1,0 +1,153 @@
+// 資料庫
+@import './partials/mixin';
+@import './partials/variable';
+
+.innerPage .cp3 .mainBox {
+
+  .container {
+    max-width: 1350px;
+  }
+
+  .innerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .block {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include screen('xs_mobile') {
+      flex-direction: column;
+    }
+
+    .pageTitle {
+      text-align: left;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+
+    .picBox {
+      order: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    .infoBox {
+      order: 1;
+    }
+
+    &.full {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &.picRight {
+      .picBox {
+        order: 1;
+      }
+
+      .infoBox {
+        order: 0;
+      }
+    }
+
+    &.picLeft {
+      .picBox {
+        order: 0;
+
+        @include screen('xs_mobile') {
+          order: 2;
+        }
+      }
+
+      .infoBox {
+        order: 1;
+      }
+    }
+
+    &.picLeft,
+    &.picRight {
+      .picBox {
+        width: calc(50% - 5vw);
+
+        @include screen('xs_mobile') {
+          width: 100%;
+        }
+      }
+
+      .infoBox {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include screen('xs_mobile') {
+          width: 100%;
+          gap: 30px;
+        }
+      }
+    }
+
+    .title {
+      font-family: $NotoSansTC;
+      font-size: Em(40);
+      line-height: 1.2;
+      font-weight: 400;
+
+      @include screen('tablet') {
+        font-size: Em(30);
+      }
+
+      @include screen('mobile') {
+        font-size: Em(24);
+      }
+    }
+
+    .description {
+      font-family: $NotoSansTC;
+      font-size: Em(22);
+
+      @include screen('tablet') {
+        font-size: Em(20);
+      }
+
+      @include screen('mobile') {
+        font-size: Em(18);
+      }
+
+      ul {
+        padding-left: 30px;
+        list-style-type: disc;
+      }
+    }
+
+    .btnBox {
+      display: flex;
+      gap: 20px;
+
+      @include screen('mobile') {
+        gap: 10px;
+        flex-direction: column;
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    .title.center {
+      padding: 30px;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

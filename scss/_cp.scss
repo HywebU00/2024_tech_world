@@ -47,10 +47,10 @@
     }
 
     h2 {
-      font-size: Rem(22);
+      font-size: Em(22);
 
       @include screen('tablet') {
-        font-size: Rem(20);
+        font-size: Em(20);
       }
     }
   }
@@ -153,7 +153,7 @@
           align-items: center;
           justify-content: center;
           position: relative;
-          font-size: Rem(15);
+          font-size: Em(15);
           width: 76px;
           height: 74px;
           font-weight: 500;
@@ -164,7 +164,7 @@
           @include screen('tablet') {
             width: 40px;
             height: 40px;
-            font-size: Rem(16);
+            font-size: Em(16);
           }
 
           &::before {

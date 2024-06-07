@@ -44,6 +44,7 @@
       font-weight: 400;
       display: flex;
       flex-direction: column;
+      font-family: $NotoSansTC;
 
       @include screen('xs_mobile') {
         padding: 0 !important;
@@ -81,6 +82,10 @@
       width: fit-content;
       text-transform: uppercase;
     }
+  }
+
+  .description {
+    font-family: $NotoSansTC;
   }
 
   .picBox {
@@ -143,11 +148,11 @@
       .zh {
         text-align: left;
         padding-left: 10%;
-        font-size: clamp(Rem(40), 6vw, Rem(110));
+        font-size: clamp(Em(40), 6vw, Em(110));
       }
 
       .en {
-        font-size: clamp(Rem(30), 5.5vw, Rem(100));
+        font-size: clamp(Em(30), 5.5vw, Em(100));
         text-align: center;
       }
     }
@@ -187,11 +192,11 @@
       .zh {
         text-align: left;
         padding-left: 12vw;
-        font-size: clamp(Rem(25), 3vw, Rem(50));
+        font-size: clamp(Em(25), 3vw, Em(50));
       }
 
       .en {
-        font-size: clamp(Rem(20), 3.3vw, Rem(65));
+        font-size: clamp(Em(20), 3.3vw, Em(65));
         line-height: 1.6;
       }
     }
@@ -217,7 +222,7 @@
     .description {
       margin-top: -6%;
       padding-left: 49vw;
-      font-size: clamp(Rem(18), 2vw, Rem(24));
+      font-size: clamp(Em(18), 2vw, Em(24));
 
       @include screen('mobile') {
         margin-top: 30px;
@@ -265,7 +270,7 @@
 
 
       .en {
-        font-size: clamp(Rem(30), 3.5vw, Rem(65));
+        font-size: clamp(Em(30), 3.5vw, Em(65));
         line-height: 1.6;
         margin-bottom: 30px;
         text-align: left;
@@ -473,7 +478,7 @@
 
 
       .title {
-        font-size: clamp(Rem(25), 4vw, Rem(50));
+        font-size: clamp(Em(25), 4vw, Em(50));
         font-weight: 500;
         font-family: $NotoSansTC;
         position: relative;
@@ -499,7 +504,7 @@
       }
 
       .description {
-        font-size: clamp(Rem(18), 3vw, Rem(24));
+        font-size: clamp(Em(18), 3vw, Em(24));
       }
     }
   }
@@ -542,7 +547,7 @@
         }
 
         .en {
-          font-size: clamp(Rem(30), 3.5vw, Rem(60));
+          font-size: clamp(Em(30), 3.5vw, Em(60));
           line-height: 1.3;
         }
       }
@@ -579,7 +584,7 @@
         }
 
         .title {
-          font-size: clamp(Rem(30), 3.2vw, Rem(50));
+          font-size: clamp(Em(30), 3.2vw, Em(50));
           font-weight: 500;
           font-family: $NotoSansTC;
           position: relative;
@@ -605,7 +610,7 @@
       }
 
       .description {
-        font-size: clamp(Rem(18), 2vw, Rem(24));
+        font-size: clamp(Em(18), 2vw, Em(24));
       }
 
       &.list1 {
