@@ -30,13 +30,11 @@
       padding: 20px 7% 15px;
       position: relative;
       border-radius: 80px;
-      background: rgba(255, 255, 255, 0);
       border: 1px solid #fff;
-      backdrop-filter: blur(0px);
       // background: url('../images/qa_bg.jpg') left center no-repeat;
       background: rgba(255, 255, 255, 0.5);
-      text-align: left;
       backdrop-filter: blur(4px);
+      text-align: left;
       box-shadow: 0 0 20px 0 rgba(#000, 0.1);
       font-size: Em(28);
       @include transition(all, 0.3);
