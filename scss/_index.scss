@@ -768,6 +768,7 @@
         }
 
         .out {
+          aspect-ratio: 390/370;
           width: 100%;
           max-width: 390px;
           height: 370px;
@@ -839,6 +840,11 @@
             line-height: 1.6;
             margin: 0 -20% 20px 20%;
             transform-origin: center left;
+
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
             @include transition(all, 0.3);
 
             @include screen('tablet') {

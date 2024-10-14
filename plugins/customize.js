@@ -27,7 +27,20 @@
 
   //blockParallax
   let textWrapper = document.querySelector('.slogan .day');
+
+  const numberStr = textWrapper.textContent;
+  const numbersCount = numberStr.toString().match(/\d/g).length;
+
   textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  const countSpan = document.querySelectorAll('.slogan .day span');
+  countSpan.forEach((i, index) => {
+    if (index < numbersCount) {
+      i.classList.add('active');
+    }
+    if (index === numbersCount - 1) {
+      i.classList.add('last');
+    }
+  });
 
   anime
     .timeline({ loop: true })
@@ -565,7 +578,7 @@ sliderUse('.activitiesTitleBox span');
 
 if ($('.cpPicListBox').length > 0) {
   $('.cpPicListBox .picBox .listBox').slick({
-    infinite: true,
+    infinite: false,
     speed: 300,
     slidesToShow: 1,
     prevArrow: '.cpPicListBox .prev',

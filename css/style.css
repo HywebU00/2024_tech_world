@@ -1199,7 +1199,7 @@ button:focus {
     font-size: 0.7222222222rem;
   }
 }
-.slogan .day .letter:nth-child(1), .slogan .day .letter:nth-child(2) {
+.slogan .day .letter.active {
   font-family: "Josefin Sans", sans-serif;
   font-size: 2.2222222222rem;
   color: #e30078;
@@ -1208,20 +1208,20 @@ button:focus {
   line-height: 0.7;
 }
 @media screen and (max-width: 1023px) {
-  .slogan .day .letter:nth-child(1), .slogan .day .letter:nth-child(2) {
+  .slogan .day .letter.active {
     font-size: 1.4444444444rem;
   }
 }
 @media screen and (max-width: 767px) {
-  .slogan .day .letter:nth-child(1), .slogan .day .letter:nth-child(2) {
+  .slogan .day .letter.active {
     font-size: 0.8888888889rem;
   }
 }
-.slogan .day .letter:nth-child(2) {
+.slogan .day .letter.active.last {
   margin-right: 20px;
 }
 @media screen and (max-width: 1023px) {
-  .slogan .day .letter:nth-child(2) {
+  .slogan .day .letter.active.last {
     margin-right: 0px;
   }
 }
@@ -3913,6 +3913,7 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .activitiesBox .topBox .infoBox .out {
+  aspect-ratio: 390/370;
   width: 100%;
   max-width: 390px;
   height: 370px;
@@ -3975,6 +3976,10 @@ table.tableSprite tr:nth-child(even) {
   line-height: 1.6;
   margin: 0 -20% 20px 20%;
   transform-origin: center left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1023px) {

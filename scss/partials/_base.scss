@@ -971,8 +971,7 @@ button {
         font-size: Rem(13);
       }
 
-      &:nth-child(1),
-      &:nth-child(2) {
+      &.active {
         font-family: "Josefin Sans", sans-serif;
         font-size: Rem(40);
         color: #e30078;
@@ -987,13 +986,14 @@ button {
         @include screen('mobile') {
           font-size: Rem(16);
         }
-      }
 
-      &:nth-child(2) {
-        margin-right: 20px;
+        &.last {
 
-        @include screen('tablet') {
-          margin-right: 0px;
+          margin-right: 20px;
+
+          @include screen('tablet') {
+            margin-right: 0px;
+          }
         }
       }
     }
