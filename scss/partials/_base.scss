@@ -62,7 +62,7 @@ body {
   margin: 0 auto;
   padding: 0;
   color: #000;
-  font-family: $LibreBaskerville;
+  font-family: $LibreBaskerville !important;
   line-height: 1.75;
   // overflow-y: auto;
   // scrollbar-color: $mainColor rgba(0, 0, 0, 0.2);
@@ -85,6 +85,9 @@ body {
   //   border-radius: 0;
   //   background: rgba(0, 0, 0, 0.1);
   // }
+  * {
+    font-family: $LibreBaskerville !important;
+  }
 }
 
 // a {
@@ -480,15 +483,20 @@ button {
 
   .inMenu {
     position: absolute;
-    left: 50%;
+    left: 200px;
 
     //20230510
     // transform: translateX(-50%);
     // bottom: -25px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
 
-    @include screenWidth('1220') {
+    @include screenWidth('1600') {
+      transform: translate(0, -50%);
+      left: 200px;
+    }
+
+    @include screenWidth('1330') {
       display: none;
     }
 
@@ -497,22 +505,45 @@ button {
       align-items: center;
 
       li {
-        margin: 0 20px;
+        margin: 0 15px;
         padding: 15px 0;
         position: relative;
 
-        @include screenWidth('1450') {
+        @include screenWidth('1600') {
           margin: 0 10px;
         }
       }
 
       a {
-        font-size: Rem(20);
+        font-size: Rem(18);
         color: #000;
         white-space: nowrap;
 
-        @include screenWidth('1450') {
-          font-size: Rem(18);
+        @include screenWidth('1600') {
+          font-size: Rem(16);
+        }
+
+        // @include screenWidth('1450') {
+        //   font-size: Rem(18);
+        // }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $mainColor;
+          @include transition(all, 0.3);
+        }
+
+        @include screenWidthMin('1220') {
+          &:hover {
+            &::before {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -929,9 +960,9 @@ button {
     height: 77px;
     @include transition(all, 0.3);
 
-    @include screen('tablet') {
-      height: 100px;
-    }
+    // @include screen('tablet') {
+    //   height: 100px;
+    // }
 
     @include screen('mobile') {
       height: 60px;
@@ -1948,23 +1979,24 @@ footer {
     }
 
     .footerMenuBox {
-      max-width: 300px;
+      // max-width: 600px;
 
-      ul {
+      & > ul {
         display: flex;
         flex-wrap: wrap;
+        gap: 20px;
         margin-bottom: 30px;
 
-        li {
-          width: calc((100% - 20px)/2);
+        & > li {
+          // width: calc((100% - 20px * 2)/3);
 
-          @include screen('tablet') {
-            width: calc((100% - 40px)/3);
-          }
+          // @include screen('tablet') {
+          //   width: calc((100% - 40px)/3);
+          // }
 
-          a {
+          & > a {
             width: fit-content;
-            padding: 13px 25px 12px;
+            padding: 13px 25px 10px;
             display: block;
             color: #fff;
             @include transition(all, 0.3);
@@ -1978,6 +2010,20 @@ footer {
             @include screen('tablet') {
               text-align: center;
               font-size: Rem(16);
+            }
+          }
+        }
+
+        ul {
+          padding-left: 25px;
+
+          a {
+            color: #fff;
+            opacity: 0.5;
+            @include transition(all, 0.3);
+
+            &:hover {
+              opacity: 1;
             }
           }
         }

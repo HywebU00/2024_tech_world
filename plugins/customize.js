@@ -159,7 +159,6 @@
   if (videoBoxItem) {
     videoBoxItem.forEach((item) => {
       item.addEventListener('loadeddata', function () {
-        console.log(item);
         item.removeAttribute('autoplay');
         item.currentTime = 0;
         item.pause();
@@ -384,6 +383,18 @@
       });
     }
   }
+  (function () {
+    const indexBannerVideo = document.querySelector('.mobileBannerBox video');
+
+    indexBannerVideo?.addEventListener('loadeddata', function () {
+      if (window.innerWidth < 767) {
+        indexBannerVideo.currentTime = 0;
+        indexBannerVideo.play();
+      } else {
+        indexBannerVideo.pause();
+      }
+    });
+  })();
 
   const footer = document.querySelector('footer');
   window.addEventListener('resize', footerBg);
@@ -422,7 +433,6 @@
     controlBtn.forEach((item) => {
       item.addEventListener('click', () => {
         let pinHeight = pin.offsetHeight;
-        console.log(pinHeight / 3);
         if (item.classList.contains('prev')) {
           // window.scroll(0, window.scrollY - pinHeight / 3, 'smooth');
           window.scroll({
