@@ -1796,9 +1796,14 @@ button:focus {
   position: relative;
   padding: 0;
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1700px) {
   .menuBox .mainMenu {
-    margin: 0 10%;
+    margin: 0 5% 0 20%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .menuBox .mainMenu {
+    margin: 0 8% 0 8%;
   }
 }
 .menuBox .mainMenu > ul {
@@ -1852,16 +1857,11 @@ button:focus {
     background: #fff;
   }
 }
-@media screen and (min-width: 1240px) and (max-width: 1240px) {
-  .menuBox .mainMenu > ul > li.active .nextMenuBox ul::before, .menuBox .mainMenu > ul > li:hover .nextMenuBox ul::before {
-    background: #000;
-  }
-}
 .menuBox .mainMenu > ul > li .out {
   flex-shrink: 0;
   padding: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 60px;
   position: relative;
   padding: 22px 60px 18px;
@@ -1875,7 +1875,6 @@ button:focus {
 }
 @media screen and (max-width: 1200px) {
   .menuBox .mainMenu > ul > li .out {
-    align-items: flex-start;
     padding: 10px 40px;
     gap: 0px;
     flex-direction: column;
@@ -1921,7 +1920,7 @@ button:focus {
   }
 }
 .menuBox .mainMenu > ul > li .out > a .en, .menuBox .mainMenu > ul > li .out > button .en {
-  font-size: 2.4444444444rem;
+  font-size: 2.2222222222rem;
   line-height: 1.2;
 }
 @media screen and (max-width: 1600px) {
@@ -1992,6 +1991,11 @@ button:focus {
     transform: translateX(-20px);
   }
 }
+@media screen and (max-width: 1200px) {
+  .menuBox .mainMenu .nextMenuBox {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 1023px) {
   .menuBox .mainMenu .nextMenuBox {
     padding-top: 20px;
@@ -2008,11 +2012,17 @@ button:focus {
 .menuBox .mainMenu .nextMenuBox ul {
   display: flex;
   align-items: center;
-  gap: 50px;
+  flex-wrap: wrap;
+  gap: 20px 50px;
 }
 @media screen and (max-width: 1700px) {
   .menuBox .mainMenu .nextMenuBox ul {
     gap: 30px;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .menuBox .mainMenu .nextMenuBox ul {
+    gap: 20px;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -2020,34 +2030,16 @@ button:focus {
     gap: 20px;
   }
 }
-.menuBox .mainMenu .nextMenuBox ul::before {
-  content: "";
-  height: 1px;
-  width: 60px;
-  display: block;
-  background: #000;
-}
-@media screen and (max-width: 767px) {
-  .menuBox .mainMenu .nextMenuBox ul::before {
-    width: 30px;
-    background: #fff;
-  }
-}
 .menuBox .mainMenu .nextMenuBox a {
   display: block;
   position: relative;
   color: #343434;
   white-space: nowrap;
-  font-size: 1.3333333333rem;
+  font-size: 1.1111111111rem;
 }
 @media screen and (max-width: 1600px) {
   .menuBox .mainMenu .nextMenuBox a {
-    font-size: 1.2222222222rem;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .menuBox .mainMenu .nextMenuBox a {
-    font-size: 1.1111111111rem;
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 1023px) {

@@ -1433,9 +1433,17 @@ button {
     position: relative;
     padding: 0;
 
-    @include screen('tablet') {
-      margin: 0 10%;
+    @include screenWidth('1700') {
+      margin: 0 5% 0 20%;
     }
+
+    @include screenWidth('1200') {
+      margin: 0 8% 0 8%;
+    }
+
+    // @include screen('tablet') {
+    //   margin: 0 8%;
+    // }
 
     & > ul {
       display: flex;
@@ -1490,18 +1498,14 @@ button {
             }
           }
 
-          @include screenWidthMin('1240') {
-            .nextMenuBox {
+          .nextMenuBox {
+            @include screenWidthMin('1240') {
               opacity: 1;
               transform: translateX(0);
 
               ul {
                 &::before {
                   background: #fff;
-
-                  @include screenWidth('1240') {
-                    background: #000;
-                  }
                 }
               }
             }
@@ -1512,7 +1516,7 @@ button {
           flex-shrink: 0;
           padding: 0;
           display: flex;
-          align-items: flex-end;
+          align-items: flex-start;
           gap: 60px;
           position: relative;
           padding: 22px 60px 18px;
@@ -1524,7 +1528,6 @@ button {
           }
 
           @include screenWidth('1200') {
-            align-items: flex-start;
             padding: 10px 40px;
             gap: 0px;
             flex-direction: column;
@@ -1573,7 +1576,7 @@ button {
             }
 
             .en {
-              font-size: Rem(44);
+              font-size: Rem(40);
               line-height: 1.2;
 
               @include screenWidth('1600') {
@@ -1632,6 +1635,10 @@ button {
         transform: translateX(-20px);
       }
 
+      @include screenWidth('1200') {
+        margin-top: 20px;
+      }
+
       @include screen('tablet') {
         padding-top: 20px;
       }
@@ -1647,28 +1654,38 @@ button {
       ul {
         display: flex;
         align-items: center;
-        gap: 50px;
+        flex-wrap: wrap;
+        gap: 20px 50px;
 
         @include screenWidth('1700') {
           gap: 30px;
+        }
+
+        @include screenWidth('1600') {
+          gap: 20px;
         }
 
         @include screen('tablet') {
           gap: 20px;
         }
 
-        &::before {
-          content: '';
-          height: 1px;
-          width: 60px;
-          display: block;
-          background: #000;
+        // &::before {
+        //   content: '';
+        //   height: 1px;
+        //   width: 60px;
+        //   display: block;
+        //   background: #000;
 
-          @include screen('mobile') {
-            width: 30px;
-            background: #fff;
-          }
-        }
+        //   @include screenWidth('1400') {
+        //     display: none;
+        //   }
+
+        //   @include screen('mobile') {
+        //     display: block;
+        //     width: 30px;
+        //     background: #fff;
+        //   }
+        // }
 
       }
 
@@ -1677,14 +1694,10 @@ button {
         position: relative;
         color: #343434;
         white-space: nowrap;
-        font-size: Rem(24);
+        font-size: Rem(20);
 
         @include screenWidth('1600') {
-          font-size: Rem(22);
-        }
-
-        @include screenWidth('1300') {
-          font-size: Rem(20);
+          font-size: Rem(18);
         }
 
         @include screen('tablet') {
