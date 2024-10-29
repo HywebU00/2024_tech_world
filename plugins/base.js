@@ -242,3 +242,16 @@ function faq(q, a) {
     }
   });
 }
+
+if (document.querySelectorAll('[data-fancybox]').length > 0) {
+  Fancybox.bind('[data-fancybox]', {
+    compact: false,
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ['close'],
+      },
+    },
+  });
+}
