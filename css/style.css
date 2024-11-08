@@ -3729,6 +3729,9 @@ table.tableSprite tr:nth-child(even) {
     transform: translateY(-5px);
   }
 }
+.index main {
+  padding-top: 81px;
+}
 .index .mobileBannerBox {
   position: relative;
   display: none;

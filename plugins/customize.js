@@ -22,7 +22,7 @@
       siteHeader.classList.remove('headFix');
       body.classList.remove('mobileOpen');
     }
-    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // 確保在頂部時不會出現負值
+    lastScrollTop = currentScrollTop <= 81 ? 81 : currentScrollTop; // 確保在頂部時不會出現負值
   }
 
   //blockParallax
