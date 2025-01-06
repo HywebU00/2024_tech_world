@@ -1438,7 +1438,7 @@ button:focus {
   z-index: 9;
 }
 .logo img {
-  height: 77px;
+  height: 72px;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 767px) {
@@ -3730,7 +3730,7 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index main {
-  padding-top: 81px;
+  padding-top: 100px;
 }
 .index .mobileBannerBox {
   position: relative;
