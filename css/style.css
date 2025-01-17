@@ -1443,7 +1443,12 @@ button:focus {
 }
 @media screen and (max-width: 767px) {
   .logo img {
-    height: 60px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .logo img {
+    height: 40px;
   }
 }
 
@@ -1459,6 +1464,16 @@ button:focus {
 @media screen and (max-width: 1023px) {
   .slogan {
     padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  .slogan {
+    left: 55%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .slogan .day {
+    transform: scale(0.8);
   }
 }
 .slogan .day .letter {
@@ -4113,6 +4128,7 @@ table.tableSprite tr:nth-child(even) {
   padding-bottom: 390px;
   padding-top: 1px;
   width: 100%;
+  overflow: hidden;
 }
 .index .activitiesBox .pin-spacer {
   width: 100% !important;

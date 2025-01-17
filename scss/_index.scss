@@ -59,6 +59,7 @@
     line-height: 1em;
     position: relative;
 
+
     &::before {
       content: '';
       position: absolute;
@@ -691,6 +692,7 @@
     padding-bottom: 390px;
     padding-top: 1px;
     width: 100%;
+    overflow: hidden;
 
 
     .pin-spacer {
