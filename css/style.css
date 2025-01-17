@@ -2301,6 +2301,7 @@ footer.fixBg::before {
   inset: 0;
   z-index: -1;
   background: #000 url("../images/footer_bg.jpg") center bottom no-repeat;
+  background-size: cover;
   display: block;
   position: fixed;
 }
@@ -2320,6 +2321,11 @@ footer .topBox .footerMenuBox > ul {
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 575px) {
+  footer .topBox .footerMenuBox > ul {
+    justify-content: center;
+  }
 }
 footer .topBox .footerMenuBox > ul > li > a {
   width: -moz-fit-content;
@@ -3747,6 +3753,11 @@ table.tableSprite tr:nth-child(even) {
 .index main {
   padding-top: 100px;
 }
+@media screen and (max-width: 767px) {
+  .index main {
+    padding-top: 70px;
+  }
+}
 .index .mobileBannerBox {
   position: relative;
   display: none;
@@ -4135,7 +4146,6 @@ table.tableSprite tr:nth-child(even) {
 }
 .index .activitiesBox .bg {
   width: 100%;
-  overflow: hidden;
 }
 .index .activitiesBox .filtered {
   position: fixed;
@@ -4222,6 +4232,8 @@ table.tableSprite tr:nth-child(even) {
 @media screen and (max-width: 767px) {
   .index .activitiesBox .topBox .infoBox {
     margin: 0 0 0 auto;
+    width: 100%;
+    transform: translateY(-50px) !important;
   }
 }
 .index .activitiesBox .topBox .infoBox .out {
@@ -4308,7 +4320,7 @@ table.tableSprite tr:nth-child(even) {
 }
 @media screen and (max-width: 575px) {
   .index .activitiesBox .topBox .infoBox .info .title {
-    margin-right: 20px;
+    margin-right: 40px;
     margin-left: 20px;
   }
 }

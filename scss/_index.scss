@@ -217,6 +217,10 @@
 
   main {
     padding-top: 100px;
+
+    @include screen('mobile') {
+      padding-top: 70px;
+    }
   }
 
   // .filtered {
@@ -701,7 +705,7 @@
 
     .bg {
       width: 100%;
-      overflow: hidden;
+      // overflow: hidden;
     }
 
     .filtered {
@@ -796,6 +800,8 @@
 
         @include screen('mobile') {
           margin: 0 0 0 auto;
+          width: 100%;
+          transform: translateY(-50px) !important;
         }
 
         .out {
@@ -889,7 +895,7 @@
             }
 
             @include screen('xs_mobile') {
-              margin-right: 20px;
+              margin-right: 40px;
               margin-left: 20px;
             }
           }
