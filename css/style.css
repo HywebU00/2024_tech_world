@@ -1050,7 +1050,7 @@ button:focus {
 }
 .innerPage .inMenu {
   position: absolute;
-  left: 200px;
+  left: 220px;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -1096,7 +1096,7 @@ button:focus {
   left: 0;
   width: 0;
   height: 2px;
-  background: #B7957B;
+  background: #000;
   transition: all 0.3s ease;
 }
 @media screen and (min-width: 1220px) {
@@ -1132,14 +1132,34 @@ button:focus {
 }
 .innerPage .inMenu .nextMenuBox a {
   color: #fff;
-  display: block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding: 5px 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-.innerPage .inMenu .nextMenuBox a:hover {
-  opacity: 0.7;
+.innerPage .inMenu .nextMenuBox a::before {
+  display: none;
+}
+.innerPage .inMenu .nextMenuBox a span {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+.innerPage .inMenu .nextMenuBox a span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+.innerPage .inMenu .nextMenuBox a:hover span::before {
+  width: 100%;
 }
 .innerPage .container {
   max-width: 1410px;

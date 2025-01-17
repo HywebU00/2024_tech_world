@@ -483,7 +483,7 @@ button {
 
   .inMenu {
     position: absolute;
-    left: 200px;
+    left: 220px;
 
     //20230510
     // transform: translateX(-50%);
@@ -534,7 +534,7 @@ button {
           left: 0;
           width: 0;
           height: 2px;
-          background: $mainColor;
+          background: #000;
           @include transition(all, 0.3);
         }
 
@@ -579,14 +579,40 @@ button {
 
       a {
         color: #fff;
-        display: block;
-        text-align: center;
+        display: flex;
+        justify-content: center;
         padding: 5px 10px;
         font-size: Rem(18);
         @include transition(all, 0.3);
 
+        &::before {
+          display: none;
+        }
+
+        span {
+          width: fit-content;
+          margin: 0 auto;
+          display: block;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            @include transition(all, 0.3);
+          }
+        }
+
         &:hover {
-          opacity: 0.7;
+          span {
+            &::before {
+              width: 100%;
+            }
+          }
         }
       }
     }
