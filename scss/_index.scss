@@ -1428,9 +1428,9 @@
         background: #fff;
         overflow: hidden;
 
-        img {
-          max-width: 250px;
-          max-height: 55px;
+        @include screen('xs_mobile') {
+          max-width: 150px;
+          aspect-ratio: 150/55;
         }
       }
     }

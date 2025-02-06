@@ -4791,9 +4791,11 @@ table.tableSprite tr:nth-child(even) {
   background: #fff;
   overflow: hidden;
 }
-.index .linkBox .listBox a img {
-  max-width: 250px;
-  max-height: 55px;
+@media screen and (max-width: 575px) {
+  .index .linkBox .listBox a {
+    max-width: 150px;
+    aspect-ratio: 150/55;
+  }
 }
 
 .checkBox {
