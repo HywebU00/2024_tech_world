@@ -4780,18 +4780,19 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .linkBox .listBox a {
-  max-width: 255px;
+  max-width: 250px;
   max-height: 55px;
-  aspect-ratio: 255/55;
+  aspect-ratio: 250/55;
   margin: 0 auto;
   display: flex;
   height: 100%;
   align-items: center;
   justify-content: center;
   background: #fff;
+  overflow: hidden;
 }
 .index .linkBox .listBox a img {
-  max-width: 255px;
+  max-width: 250px;
   max-height: 55px;
 }
 
