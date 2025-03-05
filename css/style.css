@@ -263,54 +263,94 @@
   src: url("../fonts/josefin-sans-v32-latin-700italic.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* zen-kaku-gothic-new-300 - japanese_latin */
+/* noto-sans-jp-100 - japanese_latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-100.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-200 - japanese_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-200.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-300 - japanese_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/zen-kaku-gothic-new-v16-japanese_latin-300.woff2") format("woff2");
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-300.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* zen-kaku-gothic-new-regular - japanese_latin */
+/* noto-sans-jp-regular - japanese_latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/zen-kaku-gothic-new-v16-japanese_latin-regular.woff2") format("woff2");
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-regular.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* zen-kaku-gothic-new-500 - japanese_latin */
+/* noto-sans-jp-500 - japanese_latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/zen-kaku-gothic-new-v16-japanese_latin-500.woff2") format("woff2");
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-500.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* zen-kaku-gothic-new-700 - japanese_latin */
+/* noto-sans-jp-600 - japanese_latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-600.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-700 - japanese_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/zen-kaku-gothic-new-v16-japanese_latin-700.woff2") format("woff2");
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-700.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-/* zen-kaku-gothic-new-900 - japanese_latin */
+/* noto-sans-jp-800 - japanese_latin */
 @font-face {
   font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-800.woff2") format("woff2");
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-900 - japanese_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Noto Sans JP";
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/zen-kaku-gothic-new-v16-japanese_latin-900.woff2") format("woff2");
+  src: url("../fonts/noto-sans-jp-v53-japanese_latin-900.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -764,11 +804,11 @@ body {
   margin: 0 auto;
   padding: 0;
   color: #000;
-  font-family: "Libre Baskerville", "Noto Sans TC", "Zen Kaku Gothic New", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif !important;
+  font-family: "Libre Baskerville", "Noto Sans TC", "Noto Sans JP", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif !important;
   line-height: 1.75;
 }
 body * {
-  font-family: "Libre Baskerville", "Noto Sans TC", "Zen Kaku Gothic New", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif !important;
+  font-family: "Libre Baskerville", "Noto Sans TC", "Noto Sans JP", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif !important;
 }
 
 img {
@@ -5398,6 +5438,311 @@ table.tableSprite tr:nth-child(even) {
   100% {
     border-radius: 45% 55% 60% 40%/51% 30% 70% 49%;
   }
+}
+.innerPage .cp .mainBox .fileDownload {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+.innerPage .cp .mainBox .fileDownload h4 {
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.innerPage .cp .mainBox .fileDownload h4::after {
+  content: "";
+  height: 1px;
+  background: #a1a1a1;
+  display: block;
+  flex-grow: 1;
+}
+.innerPage .cp .mainBox .fileDownload ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.innerPage .cp .mainBox .fileDownload li {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 5px;
+  border-bottom: solid 1px #eee;
+}
+.innerPage .cp .mainBox .fileDownload li .fileName {
+  line-height: 1.8em;
+  color: #222;
+}
+.innerPage .cp .mainBox .fileDownload li .fileName ~ span {
+  flex: 0 0 auto;
+  margin: 0.2em;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  vertical-align: middle;
+  color: #666;
+}
+.innerPage .cp .mainBox .fileDownload li .fileName ~ span a {
+  color: #fff;
+  display: inline-block;
+  margin-right: 8px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_doc a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_doc a:hover, .innerPage .cp .mainBox .fileDownload li span.file_doc a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_docx a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_docx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_docx a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_odt a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_odt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_odt a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xls a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xls a:hover, .innerPage .cp .mainBox .fileDownload li span.file_xls a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xlsx a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xlsx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_xlsx a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_csv a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_csv a:hover, .innerPage .cp .mainBox .fileDownload li span.file_csv a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ods a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ods a:hover, .innerPage .cp .mainBox .fileDownload li span.file_ods a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ppt a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ppt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_ppt a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pptx a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pptx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_pptx a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_odp a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_odp a:hover, .innerPage .cp .mainBox .fileDownload li span.file_odp a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_zip a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_zip a:hover, .innerPage .cp .mainBox .fileDownload li span.file_zip a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_txt a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_txt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_txt a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mov a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mov a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mov a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp3 a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp3 a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mp3 a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_jpg a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_jpg a:hover, .innerPage .cp .mainBox .fileDownload li span.file_jpg a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_wmv a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_wmv a:hover, .innerPage .cp .mainBox .fileDownload li span.file_wmv a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp4 a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp4 a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mp4 a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pdf a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pdf a:hover, .innerPage .cp .mainBox .fileDownload li span.file_pdf a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_other a {
+  color: #fff;
+  font-weight: bold;
+  padding: 0px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_other a:hover, .innerPage .cp .mainBox .fileDownload li span.file_other a:focus-visible {
+  color: #fff;
+}
+.innerPage .cp .mainBox .fileDownload li span {
+  display: flex;
+  align-items: center;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_doc a, .innerPage .cp .mainBox .fileDownload li span.file_docx a, .innerPage .cp .mainBox .fileDownload li span.file_odt a {
+  background: #275cb7;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_doc a:hover, .innerPage .cp .mainBox .fileDownload li span.file_doc a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_docx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_docx a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_odt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_odt a:focus-visible {
+  background: #2351a2;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xls a, .innerPage .cp .mainBox .fileDownload li span.file_xlsx a, .innerPage .cp .mainBox .fileDownload li span.file_csv a, .innerPage .cp .mainBox .fileDownload li span.file_ods a {
+  background: #387947;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_xls a:hover, .innerPage .cp .mainBox .fileDownload li span.file_xls a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_xlsx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_xlsx a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_csv a:hover, .innerPage .cp .mainBox .fileDownload li span.file_csv a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_ods a:hover, .innerPage .cp .mainBox .fileDownload li span.file_ods a:focus-visible {
+  background: #30683d;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ppt a, .innerPage .cp .mainBox .fileDownload li span.file_pptx a, .innerPage .cp .mainBox .fileDownload li span.file_odp a, .innerPage .cp .mainBox .fileDownload li span.file_pdf a {
+  background: #c55a3b;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_ppt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_ppt a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_pptx a:hover, .innerPage .cp .mainBox .fileDownload li span.file_pptx a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_odp a:hover, .innerPage .cp .mainBox .fileDownload li span.file_odp a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_pdf a:hover, .innerPage .cp .mainBox .fileDownload li span.file_pdf a:focus-visible {
+  background: #b25135;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pdf a {
+  background: #c00;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_pdf a:hover, .innerPage .cp .mainBox .fileDownload li span.file_pdf a:focus-visible {
+  background: #b30000;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_zip a {
+  background: #eb712e;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_zip a:hover, .innerPage .cp .mainBox .fileDownload li span.file_zip a:focus-visible {
+  background: #e96117;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_txt a, .innerPage .cp .mainBox .fileDownload li span.file_other a {
+  background: #555;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_txt a:hover, .innerPage .cp .mainBox .fileDownload li span.file_txt a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_other a:hover, .innerPage .cp .mainBox .fileDownload li span.file_other a:focus-visible {
+  background: #484848;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mov a {
+  background: #009999;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mov a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mov a:focus-visible {
+  background: teal;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp3 a, .innerPage .cp .mainBox .fileDownload li span.file_mp4 a {
+  background: #088ecc;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_mp3 a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mp3 a:focus-visible, .innerPage .cp .mainBox .fileDownload li span.file_mp4 a:hover, .innerPage .cp .mainBox .fileDownload li span.file_mp4 a:focus-visible {
+  background: #077db3;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_jpg a {
+  background: #6c29a4;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_jpg a:hover, .innerPage .cp .mainBox .fileDownload li span.file_jpg a:focus-visible {
+  background: #5f2490;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_wmv a {
+  background: #430a1f;
+}
+.innerPage .cp .mainBox .fileDownload li span.file_wmv a:hover, .innerPage .cp .mainBox .fileDownload li span.file_wmv a:focus-visible {
+  background: #2d0715;
 }
 
 .innerPage .cp2 .mainBox {
