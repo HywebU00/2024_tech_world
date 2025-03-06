@@ -1417,9 +1417,6 @@
       }
 
       a {
-        max-width: 250px;
-        max-height: 55px;
-        aspect-ratio: 250/55;
         margin: 0 auto;
         display: flex;
         height: 100%;
@@ -1428,9 +1425,14 @@
         background: #fff;
         overflow: hidden;
 
-        @include screen('xs_mobile') {
-          max-width: 150px;
-          aspect-ratio: 150/55;
+        img {
+          max-width: 250px;
+          max-height: 80px;
+          aspect-ratio: 250/80;
+
+          @include screen('xs_mobile') {
+            max-width: 150px;
+          }
         }
       }
     }
