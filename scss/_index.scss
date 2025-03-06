@@ -696,7 +696,7 @@
     padding-bottom: 390px;
     padding-top: 1px;
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 
 
     .pin-spacer {
@@ -923,6 +923,7 @@
     .bottomBox {
       width: 100% !important;
       position: relative;
+      overflow: hidden;
 
       .controlBox {
         margin: 0 auto;

@@ -4249,7 +4249,6 @@ table.tableSprite tr:nth-child(even) {
   padding-bottom: 390px;
   padding-top: 1px;
   width: 100%;
-  overflow: hidden;
 }
 .index .activitiesBox .pin-spacer {
   width: 100% !important;
@@ -4454,6 +4453,7 @@ table.tableSprite tr:nth-child(even) {
 .index .activitiesBox .bottomBox {
   width: 100% !important;
   position: relative;
+  overflow: hidden;
 }
 .index .activitiesBox .bottomBox .controlBox {
   margin: 0 auto;
