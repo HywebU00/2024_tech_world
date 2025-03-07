@@ -47,7 +47,7 @@
       position: relative;
       box-shadow: 10px 10px 10px 0 rgba(#000, 0);
       @include transition(all, 0.3);
-      aspect-ratio: 43/31;
+      aspect-ratio: 4/3;
       overflow: hidden;
 
       &::after {
@@ -163,7 +163,7 @@
       position: relative;
       box-shadow: 10px 10px 10px 0 rgba(#000, 0);
       @include transition(all, 0.3);
-      aspect-ratio: 43/31;
+      aspect-ratio: 4/3;
       overflow: hidden;
 
       @include screen('mobileMin') {
@@ -274,7 +274,7 @@
       position: relative;
       box-shadow: 10px 10px 10px 0 rgba(#000, 0);
       @include transition(all, 0.3);
-      aspect-ratio: 43/31;
+      aspect-ratio: 4/3;
       overflow: hidden;
 
       &::after {

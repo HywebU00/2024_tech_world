@@ -788,8 +788,10 @@
         }
 
         .pic {
+          aspect-ratio: 4/3;
+
           img {
-            aspect-ratio: 64/44;
+            object-fit: cover;
           }
         }
       }
@@ -1098,12 +1100,12 @@
 
           .picBox {
             width: 540px;
-            aspect-ratio: 600/460;
             position: relative;
             background: #fff;
             border-radius: 20px;
             overflow: hidden;
             margin-right: -20%;
+            aspect-ratio: 4/3;
 
             @include screen('mobile') {
               width: 90vw;
@@ -1151,7 +1153,6 @@
               }
 
               img {
-                aspect-ratio: 64/44;
                 object-fit: cover;
               }
             }

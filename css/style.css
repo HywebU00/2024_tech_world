@@ -4330,8 +4330,12 @@ table.tableSprite tr:nth-child(even) {
     width: 90%;
   }
 }
+.index .activitiesBox .topBox .picBox .pic {
+  aspect-ratio: 4/3;
+}
 .index .activitiesBox .topBox .picBox .pic img {
-  aspect-ratio: 64/44;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .index .activitiesBox .topBox .infoBox {
   position: relative;
@@ -4592,12 +4596,12 @@ table.tableSprite tr:nth-child(even) {
 }
 .index .activitiesBox .bottomBox .listBox .item .picBox {
   width: 540px;
-  aspect-ratio: 600/460;
   position: relative;
   background: #fff;
   border-radius: 20px;
   overflow: hidden;
   margin-right: -20%;
+  aspect-ratio: 4/3;
 }
 @media screen and (max-width: 767px) {
   .index .activitiesBox .bottomBox .listBox .item .picBox {
@@ -4637,7 +4641,6 @@ table.tableSprite tr:nth-child(even) {
   }
 }
 .index .activitiesBox .bottomBox .listBox .item .picBox .pic img {
-  aspect-ratio: 64/44;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -4937,7 +4940,7 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
-  aspect-ratio: 43/31;
+  aspect-ratio: 4/3;
   overflow: hidden;
 }
 .lp .listBox .pic::after {
@@ -5035,7 +5038,7 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
-  aspect-ratio: 43/31;
+  aspect-ratio: 4/3;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
@@ -5125,7 +5128,7 @@ table.tableSprite tr:nth-child(even) {
   position: relative;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
-  aspect-ratio: 43/31;
+  aspect-ratio: 4/3;
   overflow: hidden;
 }
 .lp3 .listBox .pic::after {
