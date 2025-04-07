@@ -225,6 +225,10 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       @include transition(all, 0.3);
+
+      img {
+        height: auto !important;
+      }
     }
   }
 }

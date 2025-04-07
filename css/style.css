@@ -5088,6 +5088,9 @@ table.tableSprite tr:nth-child(even) {
   -webkit-box-orient: vertical;
   transition: all 0.3s ease;
 }
+.lp2 .listBox .description img {
+  height: auto !important;
+}
 
 .lp3 .listBox {
   --gap: 50px;
@@ -5282,6 +5285,9 @@ table.tableSprite tr:nth-child(even) {
   .innerPage .cp .mainBox .editor {
     line-height: 1.8;
   }
+}
+.innerPage .cp .mainBox .editor img {
+  height: auto !important;
 }
 .innerPage .cp .mainBox .editor hr {
   margin: 60px 0;
@@ -6370,6 +6376,9 @@ table.tableSprite tr:nth-child(even) {
   flex-direction: column;
   gap: 5vw;
 }
+.innerPage .cp3 .mainBox .innerContent img {
+  height: auto !important;
+}
 .innerPage .cp3 .mainBox .block {
   position: relative;
   display: flex;
@@ -6495,6 +6504,9 @@ table.tableSprite tr:nth-child(even) {
 
 .qa .qaListBox {
   margin-bottom: 10%;
+}
+.qa .qaListBox img {
+  height: auto !important;
 }
 .qa .qaListBox ul {
   display: flex;

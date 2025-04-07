@@ -6,6 +6,10 @@
   .qaListBox {
     margin-bottom: 10%;
 
+    img {
+      height: auto !important;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -77,7 +81,6 @@
       @include screen('tablet') {
         line-height: 1.8;
       }
-
     }
   }
 
