@@ -276,33 +276,57 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 15px;
     }
 
     li {
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 0;
       position: relative;
-      padding-bottom: 5px;
       border-bottom: solid 1px #eee;
 
       .fileName {
         line-height: 1.8em;
         color: #222;
+        flex-shrink: 0;
+      }
 
-        ~ span {
-          flex: 0 0 auto;
-          margin: 0.2em;
-          font-size: 0.875em;
-          line-height: 1.5em;
-          vertical-align: middle;
-          color: #666;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
-          a {
-            color: #fff;
-            display: inline-block;
-            margin-right: 8px;
+        &:hover {
+          .fileName {
+            color: #0099a8;
           }
+        }
+      }
+
+      .tag {
+        color: #fff;
+        display: block;
+      }
+
+      span {
+        flex: 0 0 auto;
+        margin: 0;
+        font-size: 0.875em;
+        line-height: 1.5em;
+        vertical-align: middle;
+        color: #666;
+        gap: 10px;
+      }
+
+
+      .preview {
+        line-height: 1;
+        color: #a0a0a0;
+
+        @include screen('xs_mobile') {
+          order: 5;
+          width: 100%;
         }
       }
 
@@ -310,8 +334,8 @@
 
       //notice 保留file_比較清楚知道是對應什麼
       @each $fileType in $fileType {
-        span.file_#{$fileType} {
-          a {
+        .file_#{$fileType} {
+          .tag {
             color: #fff;
             font-weight: bold;
             padding: 0px 8px;
@@ -326,14 +350,16 @@
         }
       }
 
-      span {
+      [class^='file_'] {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        gap: 10px;
 
         &.file_doc,
         &.file_docx,
         &.file_odt {
-          a {
+          .tag {
             background: #275cb7;
 
             &:hover,
@@ -347,7 +373,7 @@
         &.file_xlsx,
         &.file_csv,
         &.file_ods {
-          a {
+          .tag {
             background: #387947;
 
             &:hover,
@@ -361,7 +387,7 @@
         &.file_pptx,
         &.file_odp,
         &.file_pdf {
-          a {
+          .tag {
             background: #c55a3b;
 
             &:hover,
@@ -372,7 +398,7 @@
         }
 
         &.file_pdf {
-          a {
+          .tag {
             background: #c00;
 
             &:hover,
@@ -383,7 +409,7 @@
         }
 
         &.file_zip {
-          a {
+          .tag {
             background: #eb712e;
 
             &:hover,
@@ -395,7 +421,7 @@
 
         &.file_txt,
         &.file_other {
-          a {
+          .tag {
             background: #555;
 
             &:hover,
@@ -406,7 +432,7 @@
         }
 
         &.file_mov {
-          a {
+          .tag {
             background: #009999;
 
             &:hover,
@@ -418,7 +444,7 @@
 
         &.file_mp3,
         &.file_mp4 {
-          a {
+          .tag {
             background: #088ecc;
 
             &:hover,
@@ -429,7 +455,7 @@
         }
 
         &.file_jpg {
-          a {
+          .tag {
             background: #6c29a4;
 
             &:hover,
@@ -440,7 +466,7 @@
         }
 
         &.file_wmv {
-          a {
+          .tag {
             background: #430a1f;
 
             &:hover,
